@@ -1,1 +1,21 @@
-spring.application.name=virtual-teach
+server:
+  port: 8080
+
+spring:
+  application:
+    name: virtual-teach
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///vt?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: isDeleted

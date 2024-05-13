@@ -3,5 +3,5 @@
 ## 目录结构
 
 - 服务端 `server`
-- 客户端 `site`
-- 数据库 `wt.sql`
+- 客户端 `client`
+- 数据库 `vt.sql`

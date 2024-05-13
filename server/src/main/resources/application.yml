@@ -18,4 +18,4 @@ spring:
 mybatis-plus:
   global-config:
     db-config:
-      logic-delete-field: isDeleted
+      logic-delete-field: deleted

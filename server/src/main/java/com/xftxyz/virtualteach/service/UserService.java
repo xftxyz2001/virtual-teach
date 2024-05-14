@@ -2,6 +2,8 @@ package com.xftxyz.virtualteach.service;
 
 import com.xftxyz.virtualteach.domain.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.xftxyz.virtualteach.vo.req.LoginReq;
+import com.xftxyz.virtualteach.vo.resp.LoginResp;
 
 /**
 * @author 25810
@@ -10,4 +12,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface UserService extends IService<User> {
 
+    LoginResp login(LoginReq loginReq);
 }

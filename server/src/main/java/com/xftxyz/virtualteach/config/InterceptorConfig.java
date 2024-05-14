@@ -27,7 +27,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
         // 排除登录接口/login、swagger接口
         registry.addInterceptor(authInterceptor)
                 .addPathPatterns("/**")
-                .excludePathPatterns("/api/admin/login", "/swagger-ui/**", "/v3/api-docs/**");
+                .excludePathPatterns("/api/user/login", "/swagger-ui/**", "/v3/api-docs/**");
 
     }
 }

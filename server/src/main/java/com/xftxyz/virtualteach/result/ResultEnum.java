@@ -15,6 +15,7 @@ public enum ResultEnum {
     NOT_LOGIN(101, "未登录"), // 未登录
     PASSWORD_ERROR(102, "密码错误"), // 密码错误
     USER_NOT_EXIST(103, "用户不存在"), // 用户不存在
+    PHONE_ALREADY_EXIST(104, "手机号已存在"), // 手机号已存在
 
     // 4参数错误
     PARAM_ERROR(400, "非法参数"),

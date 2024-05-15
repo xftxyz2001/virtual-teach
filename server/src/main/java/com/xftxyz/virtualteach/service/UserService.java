@@ -2,9 +2,7 @@ package com.xftxyz.virtualteach.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.xftxyz.virtualteach.domain.User;
-import com.xftxyz.virtualteach.vo.req.ForgetPasswordReq;
-import com.xftxyz.virtualteach.vo.req.LoginReq;
-import com.xftxyz.virtualteach.vo.req.SendCodeReq;
+import com.xftxyz.virtualteach.vo.req.*;
 import com.xftxyz.virtualteach.vo.resp.LoginResp;
 
 /**
@@ -19,4 +17,8 @@ public interface UserService extends IService<User> {
     Boolean sendCode(SendCodeReq sendCodeReq);
 
     Boolean forgetPassword(ForgetPasswordReq forgetPasswordReq);
+
+    Boolean updatePhone(Long userId, UpdatePhoneReq updatePhoneReq);
+
+    Boolean updateSignature(Long userId, UpdateSignatureReq updateSignatureReq);
 }

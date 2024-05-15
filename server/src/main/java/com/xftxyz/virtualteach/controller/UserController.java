@@ -1,17 +1,13 @@
 package com.xftxyz.virtualteach.controller;
 
+import com.xftxyz.virtualteach.config.Env;
 import com.xftxyz.virtualteach.service.UserService;
-import com.xftxyz.virtualteach.vo.req.ForgetPasswordReq;
-import com.xftxyz.virtualteach.vo.req.LoginReq;
-import com.xftxyz.virtualteach.vo.req.SendCodeReq;
+import com.xftxyz.virtualteach.vo.req.*;
 import com.xftxyz.virtualteach.vo.resp.LoginResp;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Validated
 @RestController
@@ -37,5 +33,19 @@ public class UserController {
     @PostMapping("/sendCode")
     public Boolean sendCode(@RequestBody @NotNull SendCodeReq sendCodeReq) {
         return userService.sendCode(sendCodeReq);
+    }
+
+    // 修改手机号
+    @PostMapping("/updatePhone")
+    public Boolean updatePhone(@RequestAttribute(Env.USER_ID) Long userId,
+                               @RequestBody @NotNull UpdatePhoneReq updatePhoneReq) {
+        return userService.updatePhone(userId, updatePhoneReq);
+    }
+
+    // 修改个性签名
+    @PostMapping("/updateSignature")
+    public Boolean updateSignature(@RequestAttribute(Env.USER_ID) Long userId,
+                                   @RequestBody @NotNull UpdateSignatureReq updateSignatureReq) {
+        return userService.updateSignature(userId, updateSignatureReq);
     }
 }

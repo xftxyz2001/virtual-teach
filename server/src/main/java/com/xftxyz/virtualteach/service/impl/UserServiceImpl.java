@@ -14,9 +14,7 @@ import com.xftxyz.virtualteach.helper.RandomHelper;
 import com.xftxyz.virtualteach.mapper.UserMapper;
 import com.xftxyz.virtualteach.result.ResultEnum;
 import com.xftxyz.virtualteach.service.UserService;
-import com.xftxyz.virtualteach.vo.req.ForgetPasswordReq;
-import com.xftxyz.virtualteach.vo.req.LoginReq;
-import com.xftxyz.virtualteach.vo.req.SendCodeReq;
+import com.xftxyz.virtualteach.vo.req.*;
 import com.xftxyz.virtualteach.vo.resp.LoginResp;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -109,6 +107,36 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         }
         checkVerificationCode(login, forgetPasswordReq.getCode());
         user.setPassword(forgetPasswordReq.getPassword());
+        baseMapper.updateById(user);
+        return Boolean.TRUE;
+    }
+
+    @Override
+    public Boolean updatePhone(Long userId, UpdatePhoneReq updatePhoneReq) {
+        User user = baseMapper.selectById(userId);
+        if (ObjectUtils.isEmpty(user)) {
+            BusinessException.throwOf(ResultEnum.USER_NOT_EXIST);
+        }
+        String newPhone = updatePhoneReq.getPhone();
+        checkVerificationCode(newPhone, updatePhoneReq.getCode());
+
+        User existUser = baseMapper.selectOne(Wrappers.<User>lambdaQuery()
+                .eq(User::getLogin, newPhone));
+        if (!ObjectUtils.isEmpty(existUser)) {
+            BusinessException.throwOf(ResultEnum.PHONE_ALREADY_EXIST);
+        }
+        user.setLogin(newPhone);
+        baseMapper.updateById(user);
+        return Boolean.TRUE;
+    }
+
+    @Override
+    public Boolean updateSignature(Long userId, UpdateSignatureReq updateSignatureReq) {
+        User user = baseMapper.selectById(userId);
+        if (ObjectUtils.isEmpty(user)) {
+            BusinessException.throwOf(ResultEnum.USER_NOT_EXIST);
+        }
+        user.setPersonnelSignature(updateSignatureReq.getSignature());
         baseMapper.updateById(user);
         return Boolean.TRUE;
     }

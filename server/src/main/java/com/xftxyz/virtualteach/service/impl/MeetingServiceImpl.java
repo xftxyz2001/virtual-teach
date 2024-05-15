@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xftxyz.virtualteach.domain.Meeting;
 import com.xftxyz.virtualteach.mapper.MeetingMapper;
 import com.xftxyz.virtualteach.service.MeetingService;
+import com.xftxyz.virtualteach.vo.req.CreateMeetingReq;
 import org.springframework.stereotype.Service;
 
 /**
@@ -15,6 +16,17 @@ import org.springframework.stereotype.Service;
 public class MeetingServiceImpl extends ServiceImpl<MeetingMapper, Meeting>
         implements MeetingService {
 
+    @Override
+    public Meeting createMeeting(Long userId, CreateMeetingReq createMeetingReq) {
+        Meeting meeting = Meeting.builder()
+                .inviteNum(createMeetingReq.getInviteNum())
+                .topic(createMeetingReq.getTopic())
+                .startTime(createMeetingReq.getStartTime())
+                .userId(userId)
+                .build();
+        baseMapper.insert(meeting);
+        return meeting;
+    }
 }
 
 

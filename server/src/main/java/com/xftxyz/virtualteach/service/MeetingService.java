@@ -2,6 +2,7 @@ package com.xftxyz.virtualteach.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.xftxyz.virtualteach.domain.Meeting;
+import com.xftxyz.virtualteach.vo.req.CreateMeetingReq;
 
 /**
  * @author 25810
@@ -10,4 +11,5 @@ import com.xftxyz.virtualteach.domain.Meeting;
  */
 public interface MeetingService extends IService<Meeting> {
 
+    Meeting createMeeting(Long userId, CreateMeetingReq createMeetingReq);
 }

@@ -3,6 +3,8 @@ package com.xftxyz.virtualteach.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.xftxyz.virtualteach.domain.News;
 
+import java.util.List;
+
 /**
  * @author 25810
  * @description 针对表【news(新闻公告表)】的数据库操作Service
@@ -10,4 +12,5 @@ import com.xftxyz.virtualteach.domain.News;
  */
 public interface NewsService extends IService<News> {
 
+    List<News> getPublishedNewsList(Long userId);
 }

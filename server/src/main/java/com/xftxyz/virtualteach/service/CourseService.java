@@ -13,4 +13,6 @@ import java.util.List;
 public interface CourseService extends IService<Course> {
 
     List<Course> getCourseListByDepartmentId(Long departmentId);
+
+    List<Course> getTeachedCourseList(Long userId);
 }

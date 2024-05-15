@@ -3,14 +3,18 @@ package com.xftxyz.virtualteach.service.impl;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xftxyz.virtualteach.domain.SectionUser;
+import com.xftxyz.virtualteach.domain.TeachAndResearchSection;
 import com.xftxyz.virtualteach.exception.BusinessException;
 import com.xftxyz.virtualteach.mapper.SectionUserMapper;
+import com.xftxyz.virtualteach.mapper.TeachAndResearchSectionMapper;
 import com.xftxyz.virtualteach.result.ResultEnum;
 import com.xftxyz.virtualteach.service.SectionUserService;
 import com.xftxyz.virtualteach.vo.req.JoinSectionReq;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
+
+import java.util.List;
 
 /**
  * @author 25810
@@ -21,6 +25,8 @@ import org.springframework.util.ObjectUtils;
 @RequiredArgsConstructor
 public class SectionUserServiceImpl extends ServiceImpl<SectionUserMapper, SectionUser>
         implements SectionUserService {
+
+    private final TeachAndResearchSectionMapper teachAndResearchSectionMapper;
 
     @Override
     public Boolean joinSection(Long userId, JoinSectionReq joinSectionReq) {
@@ -37,6 +43,14 @@ public class SectionUserServiceImpl extends ServiceImpl<SectionUserMapper, Secti
                 .userId(userId)
                 .build());
         return Boolean.TRUE;
+    }
+
+    @Override
+    public List<TeachAndResearchSection> getJoinedSectionList(Long userId) {
+        List<SectionUser> sectionUsers = baseMapper.selectList(Wrappers.<SectionUser>lambdaQuery()
+                .eq(SectionUser::getUserId, userId));
+        return teachAndResearchSectionMapper.selectBatchIds(
+                sectionUsers.stream().map(SectionUser::getSectionId).toList());
     }
 
 }

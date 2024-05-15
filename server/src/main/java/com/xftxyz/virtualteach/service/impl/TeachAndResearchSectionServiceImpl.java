@@ -16,6 +16,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
+import java.util.List;
+
 /**
  * @author 25810
  * @description 针对表【teach_and_research_section(教研室表)】的数据库操作Service实现
@@ -49,6 +51,12 @@ public class TeachAndResearchSectionServiceImpl extends ServiceImpl<TeachAndRese
                 .userId(userId)
                 .build());
         return Boolean.TRUE;
+    }
+
+    @Override
+    public List<TeachAndResearchSection> getCreatedSectionList(Long userId) {
+        return baseMapper.selectList(Wrappers.<TeachAndResearchSection>lambdaQuery()
+                .eq(TeachAndResearchSection::getGroupLeader, userId));
     }
 }
 

@@ -2,7 +2,10 @@ package com.xftxyz.virtualteach.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.xftxyz.virtualteach.domain.SectionUser;
+import com.xftxyz.virtualteach.domain.TeachAndResearchSection;
 import com.xftxyz.virtualteach.vo.req.JoinSectionReq;
+
+import java.util.List;
 
 /**
  * @author 25810
@@ -12,4 +15,6 @@ import com.xftxyz.virtualteach.vo.req.JoinSectionReq;
 public interface SectionUserService extends IService<SectionUser> {
 
     Boolean joinSection(Long userId, JoinSectionReq joinSectionReq);
+
+    List<TeachAndResearchSection> getJoinedSectionList(Long userId);
 }

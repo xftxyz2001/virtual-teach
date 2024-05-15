@@ -1,8 +1,5 @@
 package com.xftxyz.virtualteach.service.impl;
 
-import com.aliyun.sdk.service.dysmsapi20170525.AsyncClient;
-import com.aliyun.sdk.service.dysmsapi20170525.models.SendSmsRequest;
-import com.aliyun.sdk.service.dysmsapi20170525.models.SendSmsResponse;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xftxyz.virtualteach.autoconfigure.SmsProperties;
@@ -21,7 +18,6 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -36,7 +32,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
 
     private final StringRedisTemplate stringRedisTemplate;
     private final SmsProperties smsProperties;
-    private final AsyncClient client;
+    // private final AsyncClient client;
 
     @Override
     public LoginResp login(LoginReq loginReq) {
@@ -77,23 +73,23 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         stringRedisTemplate.opsForValue().set(Env.SMS_VERIFICATION_CODE_REDIS_KEY_PREFIX + phoneNumber, code,
                 Env.SMS_VERIFICATION_CODE_REDIS_KEY_EXPIRE, TimeUnit.SECONDS);
         // 发送验证码
-        SendSmsRequest sendSmsRequest = SendSmsRequest.builder()
-                .phoneNumbers(phoneNumber)
-                .signName(smsProperties.getSignName())
-                .templateCode(smsProperties.getCode())
-                .templateParam("{\"code\":\"" + code + "\"}")
-                .build();
-
-        CompletableFuture<SendSmsResponse> response = client.sendSms(sendSmsRequest);
-        SendSmsResponse resp = null;
-        try {
-            resp = response.get();
-        } catch (Exception e) {
-            BusinessException.throwOf(ResultEnum.SMS_VERIFICATION_CODE_SEND_FAILED);
-        }
-        if (!"OK".equals(resp.getBody().getCode())) {
-            BusinessException.throwOf(ResultEnum.SMS_VERIFICATION_CODE_SEND_FAILED);
-        }
+        // SendSmsRequest sendSmsRequest = SendSmsRequest.builder()
+        //         .phoneNumbers(phoneNumber)
+        //         .signName(smsProperties.getSignName())
+        //         .templateCode(smsProperties.getCode())
+        //         .templateParam("{\"code\":\"" + code + "\"}")
+        //         .build();
+        //
+        // CompletableFuture<SendSmsResponse> response = client.sendSms(sendSmsRequest);
+        // SendSmsResponse resp = null;
+        // try {
+        //     resp = response.get();
+        // } catch (Exception e) {
+        //     BusinessException.throwOf(ResultEnum.SMS_VERIFICATION_CODE_SEND_FAILED);
+        // }
+        // if (!"OK".equals(resp.getBody().getCode())) {
+        //     BusinessException.throwOf(ResultEnum.SMS_VERIFICATION_CODE_SEND_FAILED);
+        // }
         return Boolean.TRUE;
     }
 

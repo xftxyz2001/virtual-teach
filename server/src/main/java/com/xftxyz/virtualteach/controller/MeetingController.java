@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Validated
 @RestController
 @RequiredArgsConstructor
@@ -20,6 +22,12 @@ public class MeetingController {
     @PostMapping("/create")
     public Meeting createMeeting(@RequestAttribute(Env.USER_ID) Long userId, @RequestBody CreateMeetingReq createMeetingReq) {
         return meetingService.createMeeting(userId, createMeetingReq);
+    }
+
+    // 获取会议列表
+    @GetMapping("/list")
+    public List<Meeting> getMeetingList() {
+        return meetingService.list();
     }
 }
 

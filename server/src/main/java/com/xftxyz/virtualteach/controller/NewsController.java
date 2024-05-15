@@ -21,13 +21,15 @@ public class NewsController {
 
     private final NewsService newsService;
 
+    // 获取新闻列表
     @GetMapping("/list")
-    public List<News> getNewsList(){
+    public List<News> getNewsList() {
         return newsService.list();
     }
 
+    // 获取我已发布的新闻列表
     @GetMapping("/published")
-    public List<News> getPublishedNewsList(@RequestAttribute(Env.USER_ID) Long userId){
+    public List<News> getPublishedNewsList(@RequestAttribute(Env.USER_ID) Long userId) {
         return newsService.getPublishedNewsList(userId);
     }
 }

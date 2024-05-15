@@ -18,6 +18,7 @@ public class DepartmentController {
 
     private final DepartmentService departmentService;
 
+    // 获取所有部门列表
     @GetMapping("/list")
     public List<Department> getDepartmentList() {
         return departmentService.list();

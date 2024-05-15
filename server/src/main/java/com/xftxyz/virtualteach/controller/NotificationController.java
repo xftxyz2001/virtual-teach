@@ -18,6 +18,7 @@ public class NotificationController {
 
     private final SystemNotificationService systemNotificationService;
 
+    // 获取通知列表
     @GetMapping("/list")
     public List<SystemNotification> getNotificationList() {
         return systemNotificationService.list();

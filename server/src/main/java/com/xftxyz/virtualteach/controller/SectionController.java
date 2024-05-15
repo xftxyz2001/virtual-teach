@@ -21,11 +21,13 @@ public class SectionController {
     private SectionUserService sectionUserService;
     private TeachAndResearchSectionService teachAndResearchSectionService;
 
+    // 加入教研室
     @PostMapping("/join")
     public Boolean joinSection(@RequestAttribute(Env.USER_ID) Long userId, JoinSectionReq joinSectionReq) {
         return sectionUserService.joinSection(userId, joinSectionReq);
     }
 
+    // 创建教研室
     @PostMapping("/create")
     public Boolean createSection(@RequestAttribute(Env.USER_ID) Long userId, CreateSectionReq createSectionReq) {
         return teachAndResearchSectionService.createSection(userId, createSectionReq);

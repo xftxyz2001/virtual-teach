@@ -26,6 +26,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onResume();
         new Handler().postDelayed(() -> {
             startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+            finish();
         }, 0);
     }
 }

@@ -3,6 +3,8 @@ package com.xftxyz.virtualteach.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.xftxyz.virtualteach.domain.Course;
 
+import java.util.List;
+
 /**
  * @author 25810
  * @description 针对表【course(课程表)】的数据库操作Service
@@ -10,4 +12,5 @@ import com.xftxyz.virtualteach.domain.Course;
  */
 public interface CourseService extends IService<Course> {
 
+    List<Course> getCourseListByDepartmentId(Long departmentId);
 }

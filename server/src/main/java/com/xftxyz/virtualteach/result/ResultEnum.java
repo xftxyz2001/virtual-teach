@@ -17,6 +17,9 @@ public enum ResultEnum {
     USER_NOT_EXIST(103, "用户不存在"), // 用户不存在
     PHONE_ALREADY_EXIST(104, "手机号已存在"), // 手机号已存在
 
+    USER_ALREADY_JOINED_SECTION(301, "用户已加入教研室"), // 用户已加入教研室
+    COURSE_NOT_EXIST(302, "课程不存在"), // 课程不存在
+
     // 4参数错误
     PARAM_ERROR(400, "非法参数"),
     PARAM_VALID_ERROR(401, "参数校验失败"),

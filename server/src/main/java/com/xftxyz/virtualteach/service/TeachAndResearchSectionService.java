@@ -2,6 +2,7 @@ package com.xftxyz.virtualteach.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.xftxyz.virtualteach.domain.TeachAndResearchSection;
+import com.xftxyz.virtualteach.vo.req.CreateSectionReq;
 
 /**
  * @author 25810
@@ -10,4 +11,5 @@ import com.xftxyz.virtualteach.domain.TeachAndResearchSection;
  */
 public interface TeachAndResearchSectionService extends IService<TeachAndResearchSection> {
 
+    Boolean createSection(Long userId, CreateSectionReq createSectionReq);
 }

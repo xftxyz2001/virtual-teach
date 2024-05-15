@@ -22,12 +22,12 @@ public class BusinessException extends RuntimeException {
         this.code = resultEnum.getCode();
     }
 
-    public Result<?> handleBusinessException() {
-        return Result.failed(this.code, this.getMessage());
-    }
-
     public static void throwOf(ResultEnum resultEnum) {
         throw new BusinessException(resultEnum);
+    }
+
+    public Result<?> handleBusinessException() {
+        return Result.failed(this.code, this.getMessage());
     }
 
 }

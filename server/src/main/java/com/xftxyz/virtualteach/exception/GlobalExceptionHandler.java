@@ -1,5 +1,9 @@
 package com.xftxyz.virtualteach.exception;
 
+import com.xftxyz.virtualteach.result.Result;
+import com.xftxyz.virtualteach.result.ResultEnum;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.BindingResult;
@@ -7,12 +11,6 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
-
-import com.xftxyz.virtualteach.result.Result;
-import com.xftxyz.virtualteach.result.ResultEnum;
-
-import jakarta.validation.ConstraintViolation;
-import jakarta.validation.ConstraintViolationException;
 
 import java.util.List;
 import java.util.Set;

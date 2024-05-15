@@ -5,13 +5,13 @@
 <mapper namespace="com.xftxyz.virtualteach.mapper.TeachAndResearchSectionMapper">
 
     <resultMap id="BaseResultMap" type="com.xftxyz.virtualteach.domain.TeachAndResearchSection">
-            <id property="id" column="id" jdbcType="BIGINT"/>
-            <result property="name" column="name" jdbcType="VARCHAR"/>
-            <result property="groupLeader" column="group_leader" jdbcType="BIGINT"/>
-            <result property="courseId" column="course_id" jdbcType="BIGINT"/>
-            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
-            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
-            <result property="deleted" column="deleted" jdbcType="TINYINT"/>
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="groupLeader" column="group_leader" jdbcType="BIGINT"/>
+        <result property="courseId" column="course_id" jdbcType="BIGINT"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="deleted" column="deleted" jdbcType="TINYINT"/>
     </resultMap>
 
     <sql id="Base_Column_List">

@@ -5,17 +5,17 @@
 <mapper namespace="com.xftxyz.virtualteach.mapper.UserMapper">
 
     <resultMap id="BaseResultMap" type="com.xftxyz.virtualteach.domain.User">
-            <id property="id" column="id" jdbcType="BIGINT"/>
-            <result property="login" column="login" jdbcType="VARCHAR"/>
-            <result property="password" column="password" jdbcType="VARCHAR"/>
-            <result property="nickName" column="nick_name" jdbcType="VARCHAR"/>
-            <result property="telephone" column="telephone" jdbcType="VARCHAR"/>
-            <result property="teacherName" column="teacher_name" jdbcType="VARCHAR"/>
-            <result property="personnelSignature" column="personnel_signature" jdbcType="VARCHAR"/>
-            <result property="departmentId" column="department_id" jdbcType="BIGINT"/>
-            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
-            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
-            <result property="deleted" column="deleted" jdbcType="TINYINT"/>
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="login" column="login" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="nickName" column="nick_name" jdbcType="VARCHAR"/>
+        <result property="telephone" column="telephone" jdbcType="VARCHAR"/>
+        <result property="teacherName" column="teacher_name" jdbcType="VARCHAR"/>
+        <result property="personnelSignature" column="personnel_signature" jdbcType="VARCHAR"/>
+        <result property="departmentId" column="department_id" jdbcType="BIGINT"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="deleted" column="deleted" jdbcType="TINYINT"/>
     </resultMap>
 
     <sql id="Base_Column_List">

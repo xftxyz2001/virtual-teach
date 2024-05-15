@@ -1,64 +1,38 @@
 package com.xftxyz.virtualteach.client.activity;
 
 import android.os.Bundle;
-import android.util.Log;
-
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+
 import com.xftxyz.virtualteach.client.R;
-import com.xftxyz.virtualteach.client.fragment.HomeFragment;
-import com.xftxyz.virtualteach.client.fragment.InformationFragment;
-import com.xftxyz.virtualteach.client.fragment.MineFragment;
+import com.xftxyz.virtualteach.client.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    private BottomNavigationView bottomNavigationView;
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
 
-        initWidgets();
-        initListeners();
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        BottomNavigationView navView = findViewById(R.id.nav_view);
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.navigation_home, R.id.navigation_information, R.id.navigation_mine)
+                .build();
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        NavigationUI.setupWithNavController(binding.navView, navController);
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    private void initListeners() {
-        System.out.println(1);
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-            System.out.println(2);
-            int itemId = item.getItemId();
-            FragmentManager supportFragmentManager = MainActivity.this.getSupportFragmentManager();
-            if (itemId == R.id.navigation_home) {
-                // 切换到首页
-                supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container_activity_main, HomeFragment.class, null)
-                        .commit();
-            } else if (itemId == R.id.navigation_information) {
-                // 切换到资讯
-                supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container_activity_main, InformationFragment.class, null)
-                        .commit();
-            } else if (itemId == R.id.navigation_mine) {
-                // 切换到我的
-                supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container_activity_main, MineFragment.class, null)
-                        .commit();
-            }
-            return true;
-        });
-    }
-
-    private void initWidgets() {
-        bottomNavigationView = findViewById(R.id.nav_view);
-    }
 }

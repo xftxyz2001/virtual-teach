@@ -3,17 +3,17 @@
     xmlns:aapt="http://schemas.android.com/aapt"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/f_navigation_home">
+    app:startDestination="@id/navigation_home">
     <fragment
-        android:id="@+id/f_navigation_home"
+        android:id="@+id/navigation_home"
         android:name="com.xftxyz.virtualteach.client.fragment.HomeFragment"
         android:label="@string/title_home" />
     <fragment
-        android:id="@+id/f_navigation_information"
+        android:id="@+id/navigation_information"
         android:name="com.xftxyz.virtualteach.client.fragment.InformationFragment"
         android:label="@string/title_information" />
     <fragment
-        android:id="@+id/f_navigation_mine"
+        android:id="@+id/navigation_mine"
         android:name="com.xftxyz.virtualteach.client.fragment.MineFragment"
         android:label="@string/title_mine" />
 </navigation>

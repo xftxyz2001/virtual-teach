@@ -44,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
             String password = etPassword.getText().toString();
 
             // 登录逻辑
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
         });
     }
 

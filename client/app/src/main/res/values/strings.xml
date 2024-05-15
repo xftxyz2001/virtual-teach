@@ -24,6 +24,12 @@
     <string name="name">姓名</string>
     <string name="please_input_name">请输入姓名</string>
 
+    <!--  bottom_nav_menu  -->
+    <string name="title_home">首页</string>
+    <string name="title_information">消息</string>
+    <string name="title_mine">我的</string>
+
+
     <string name="Message_details">通知栏显示消息详情</string>
     <string name="Receive_push_notifications">接收推送通知</string>
     <string name="_2240946193_qq_com">电子邮件：2240946193@qq.com</string>
@@ -90,18 +96,14 @@
     <string name="fab_transformation_scrim_behavior">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
     <string name="finish_modify">完成修改</string>
-
-
     <string name="hide_bottom_view_on_scroll_behavior">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
     <string name="icon_content_description">Dialog Icon</string>
-
     <string name="input_new_pwd">请输入新密码</string>
     <string name="input_new_pwd_confirm">请再次输入新密码</string>
     <string name="input_nick_name">请输入昵称</string>
     <string name="input_password_verify">请再次输入密码</string>
     <string name="input_section_name">请输入教研室名字</string>
     <string name="input_section_num">请输入教研室编号</string>
-
     <string name="item_view_role_description">Tab</string>
     <string name="join">参加</string>
     <string name="join_teachResearch_section">申请加入教研室</string>
@@ -214,7 +216,6 @@
     <string name="new_telephone_num">新电话号码</string>
     <string name="news">新闻公告 |</string>
     <string name="news_announcement">新闻公告</string>
-
     <string name="nick_name">用户昵称(用户名为教职工号)</string>
     <string name="password">密码</string>
     <string name="password_toggle_content_description">Show password</string>
@@ -257,16 +258,9 @@
     <string name="teachResearch_section">教研室</string>
     <string name="teachResearch_section_num">教研室编号</string>
     <string name="teacher">教师</string>
-
-
     <string name="title_activity_main_page">Main_Page</string>
-    <string name="title_home">首页</string>
-    <string name="title_information">消息</string>
-    <string name="title_mine">我的</string>
     <string name="user_agreement">用户协议</string>
-
-
-
     <string name="virtual_teachResearch_section">虚拟教研室</string>
-
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

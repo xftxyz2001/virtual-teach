@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ece8e8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="0sp"
+                android:layout_height="50sp"
+                android:layout_weight="1"
+                android:background="#ece8e8"
+                android:drawableEnd="@drawable/turn_left"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="50sp"
+                android:layout_weight="8"
+                android:gravity="center"
+                android:text="@string/about"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="50sp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_about_to_suggestion"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginTop="8sp"
+            android:background="@color/white"
+            android:drawableRight="@drawable/next_page"
+            android:gravity="center_vertical"
+            android:paddingStart="15sp"
+            android:text="@string/suggestion_and_feedback"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55sp"
+            android:layout_marginTop="10sp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingStart="15sp">
+
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="55sp"
+                android:layout_weight="8"
+                android:gravity="center_vertical"
+                android:text="@string/local_version"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_about_local_version"
+                android:layout_width="0sp"
+                android:layout_height="55sp"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:text="1.0.1"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55sp"
+            android:layout_marginTop="1sp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingStart="15sp">
+
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="55sp"
+                android:layout_weight="8"
+                android:gravity="center_vertical"
+                android:text="@string/check_new_version"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_about_new_version"
+                android:layout_width="0sp"
+                android:layout_height="55sp"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:text="1.0.1"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

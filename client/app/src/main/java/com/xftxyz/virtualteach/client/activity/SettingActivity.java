@@ -1,5 +1,6 @@
 package com.xftxyz.virtualteach.client.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Switch;
@@ -33,7 +34,7 @@ public class SettingActivity extends AppCompatActivity {
 
     private void initListeners() {
         btnAccountManagement.setOnClickListener(v -> {
-
+            startActivity(new Intent(SettingActivity.this, ProfileActivity.class));
         });
         switchReceivePushNotifications.setOnCheckedChangeListener((buttonView, isChecked) -> {
 
@@ -42,19 +43,19 @@ public class SettingActivity extends AppCompatActivity {
 
         });
         btnPrivacyPolicy.setOnClickListener(v -> {
-
+            startActivity(new Intent(SettingActivity.this, PrivacyPolicyActivity.class));
         });
         btnUserAgreement.setOnClickListener(v -> {
-
+            startActivity(new Intent(SettingActivity.this, UserAgreementActivity.class));
         });
         btnPersonalInformationCollectionChecklist.setOnClickListener(v -> {
-
+            startActivity(new Intent(SettingActivity.this, PersonalInformationCollectionActivity.class));
         });
         btnAbout.setOnClickListener(v -> {
-
+            startActivity(new Intent(SettingActivity.this, AboutActivity.class));
         });
         btnLogout.setOnClickListener(v -> {
-
+            startActivity(new Intent(SettingActivity.this, LoginActivity.class));
         });
     }
 

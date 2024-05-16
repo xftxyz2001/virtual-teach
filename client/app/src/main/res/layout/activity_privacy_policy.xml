@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ece8e8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="0sp"
+                android:layout_height="50sp"
+                android:layout_weight="1"
+                android:background="#ece8e8"
+                android:drawableEnd="@drawable/turn_left"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="50sp"
+                android:layout_weight="8"
+                android:gravity="center"
+                android:text="@string/privacy_policy"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="50sp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3sp"
+            android:paddingStart="270sp"
+            android:text="@string/entry_into_force_time"
+            android:textColor="@color/black"
+            android:textStyle="normal|bold|italic" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginEnd="10sp"
+            android:text="@string/privacy_policy_1"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="5sp"
+            android:layout_marginEnd="10sp"
+            android:text="@string/privacy_policy_2"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="5sp"
+            android:layout_marginEnd="10sp"
+            android:text="@string/privacy_policy_3"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="5sp"
+            android:layout_marginEnd="10sp"
+            android:text="@string/privacy_policy_4"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="5sp"
+            android:layout_marginEnd="10sp"
+            android:text="@string/privacy_policy_5"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="5sp"
+            android:layout_marginEnd="10sp"
+            android:text="@string/privacy_policy_6"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="5sp"
+            android:layout_marginEnd="10sp"
+            android:text="@string/privacy_policy_7"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="5sp"
+            android:layout_marginEnd="10sp"
+            android:text="@string/privacy_policy_8"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="5sp"
+            android:layout_marginEnd="10sp"
+            android:text="@string/privacy_policy_9"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="5sp"
+            android:layout_marginEnd="10sp"
+            android:text="@string/privacy_policy_10"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="5sp"
+            android:layout_marginEnd="10sp"
+            android:text="@string/privacy_policy_11"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="5sp"
+            android:layout_marginEnd="10sp"
+            android:text="@string/_2240946193_qq_com"
+            android:textStyle="bold" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

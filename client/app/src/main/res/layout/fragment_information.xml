@@ -12,7 +12,7 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/address_book"
+            android:id="@+id/btn_info_to_news"
             android:layout_width="match_parent"
             android:layout_height="80sp"
             android:layout_marginTop="5sp"
@@ -28,7 +28,7 @@
             android:textSize="25sp" />
 
         <Button
-            android:id="@+id/virtual_teachResearch_section"
+            android:id="@+id/btn_info_to_section"
             android:layout_width="match_parent"
             android:layout_height="80sp"
             android:background="@color/white"
@@ -42,7 +42,7 @@
             android:textSize="25sp" />
 
         <Button
-            android:id="@+id/meeting_reminder"
+            android:id="@+id/btn_info_to_meeting"
             android:layout_width="match_parent"
             android:layout_height="80sp"
             android:background="@color/white"
@@ -56,7 +56,7 @@
             android:textSize="25sp" />
 
         <Button
-            android:id="@+id/system_notifications"
+            android:id="@+id/btn_info_to_notification"
             android:layout_width="match_parent"
             android:layout_height="80sp"
             android:background="@color/white"

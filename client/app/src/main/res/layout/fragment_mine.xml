@@ -1,14 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.MineFragment">
+    android:background="#ece8e8">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="mine" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <Button
+            android:id="@+id/edit_personal_info"
+            android:layout_width="match_parent"
+            android:layout_height="80sp"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="5sp"
+            android:background="@color/white"
+            android:drawableStart="@drawable/user"
+            android:drawableEnd="@drawable/next_page"
+            android:drawablePadding="25sp"
+            android:gravity="center_vertical"
+            android:paddingLeft="5sp"
+            android:paddingRight="5sp"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/course_management"
+            android:layout_width="match_parent"
+            android:layout_height="80sp"
+            android:layout_marginTop="5sp"
+            android:background="@color/white"
+            android:drawableLeft="@android:drawable/btn_star_big_on"
+            android:drawableRight="@drawable/next_page"
+            android:drawablePadding="25sp"
+            android:gravity="center_vertical"
+            android:paddingLeft="12.5sp"
+            android:paddingRight="5sp"
+            android:text="@string/my_course"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/homework_management"
+            android:layout_width="match_parent"
+            android:layout_height="80sp"
+            android:background="@color/white"
+            android:drawableLeft="@android:drawable/ic_input_get"
+            android:drawableRight="@drawable/next_page"
+            android:drawablePadding="25sp"
+            android:gravity="center_vertical"
+            android:paddingLeft="12.5sp"
+            android:paddingRight="5sp"
+            android:text="@string/my_post"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/setting"
+            android:layout_width="match_parent"
+            android:layout_height="80sp"
+            android:layout_marginTop="10sp"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/setting"
+            android:drawableRight="@drawable/next_page"
+            android:drawablePadding="25sp"
+            android:gravity="center_vertical"
+            android:paddingLeft="12.5sp"
+            android:paddingRight="5sp"
+            android:text="@string/setting"
+            android:textSize="25sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25sp"
+                android:text="@string/net_address" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10sp"
+                android:text="@string/download_address" />
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

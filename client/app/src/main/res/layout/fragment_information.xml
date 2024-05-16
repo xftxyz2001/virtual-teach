@@ -1,14 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.InformationFragment">
+    android:background="#ece8e8">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="info" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <Button
+            android:id="@+id/address_book"
+            android:layout_width="match_parent"
+            android:layout_height="80sp"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="5sp"
+            android:background="@color/white"
+            android:drawableStart="@drawable/news"
+            android:drawableEnd="@drawable/next_page"
+            android:drawablePadding="25sp"
+            android:gravity="center_vertical"
+            android:paddingStart="15sp"
+            android:paddingEnd="5sp"
+            android:text="@string/news_announcement"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/virtual_teachResearch_section"
+            android:layout_width="match_parent"
+            android:layout_height="80sp"
+            android:background="@color/white"
+            android:drawableStart="@drawable/message"
+            android:drawableEnd="@drawable/next_page"
+            android:drawablePadding="25sp"
+            android:gravity="center_vertical"
+            android:paddingStart="15sp"
+            android:paddingEnd="5sp"
+            android:text="@string/my_virtual_classroom"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/meeting_reminder"
+            android:layout_width="match_parent"
+            android:layout_height="80sp"
+            android:background="@color/white"
+            android:drawableStart="@drawable/meeting_reminder"
+            android:drawableEnd="@drawable/next_page"
+            android:drawablePadding="25sp"
+            android:gravity="center_vertical"
+            android:paddingStart="15sp"
+            android:paddingEnd="5sp"
+            android:text="@string/meeting_reminder"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/system_notifications"
+            android:layout_width="match_parent"
+            android:layout_height="80sp"
+            android:background="@color/white"
+            android:drawableStart="@drawable/system_notifications"
+            android:drawableEnd="@drawable/next_page"
+            android:drawablePadding="25sp"
+            android:gravity="center_vertical"
+            android:paddingStart="15sp"
+            android:paddingEnd="5sp"
+            android:text="@string/system_notifications"
+            android:textSize="25sp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

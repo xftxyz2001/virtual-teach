@@ -47,10 +47,10 @@ public class ProfileActivity extends AppCompatActivity {
 
         });
         btnSignature.setOnClickListener(v -> {
-
+            startActivity(new Intent(ProfileActivity.this, EditPersonalSignActivity.class));
         });
         btnTelephone.setOnClickListener(v -> {
-
+            startActivity(new Intent(ProfileActivity.this, EditTelephoneActivity.class));
         });
         btnLogout.setOnClickListener(v -> {
             startActivity(new Intent(ProfileActivity.this, LoginActivity.class));

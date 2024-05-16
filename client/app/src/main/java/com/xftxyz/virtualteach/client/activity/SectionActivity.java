@@ -2,6 +2,8 @@ package com.xftxyz.virtualteach.client.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
@@ -23,7 +25,27 @@ public class SectionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_section);
 
         initWidgets();
+        initSpinner();
         initListeners();
+    }
+
+    private void initSpinner() {
+        spSection.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,
+                new String[]{"", "创建虚拟教研室", "加入虚拟教研室"}));
+        spSection.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, android.view.View view, int position, long id) {
+                if (position == 1) {
+                    startActivity(new Intent(SectionActivity.this, CreateSectionActivity.class));
+                } else if (position == 2) {
+                    startActivity(new Intent(SectionActivity.this, JoinSectionActivity.class));
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
     }
 
     private void initListeners() {

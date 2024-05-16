@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="horizontal" android:id="@+id/meeting" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="8sp" android:layout_marginRight="3sp" android:layout_marginBottom="10sp">
+        <LinearLayout android:orientation="vertical" android:layout_width="0sp" android:layout_height="wrap_content" android:layout_weight="8.5">
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:textColor="@color/black" android:gravity="center" android:layout_width="0sp" android:layout_height="wrap_content" android:text="@string/meeting_topic" android:layout_weight="3"/>
+                <TextView android:textColor="@color/black" android:gravity="center" android:id="@+id/meeting_topic" android:layout_width="0sp" android:layout_height="wrap_content" android:layout_weight="7"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:textColor="@color/black" android:gravity="center" android:layout_width="0sp" android:layout_height="wrap_content" android:text="@string/start_time" android:layout_weight="3"/>
+                <TextView android:textColor="@color/black" android:gravity="center" android:id="@+id/meeting_startTime" android:layout_width="0sp" android:layout_height="wrap_content" android:layout_weight="7"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:textColor="@color/black" android:gravity="center" android:layout_width="0sp" android:layout_height="wrap_content" android:text="@string/meeting_num" android:layout_weight="3"/>
+                <TextView android:textColor="@color/black" android:gravity="center" android:id="@+id/meeting_num" android:layout_width="0sp" android:layout_height="wrap_content" android:layout_weight="7"/>
+            </LinearLayout>
+        </LinearLayout>
+        <Button android:textColor="@color/white" android:layout_gravity="center" android:id="@+id/btn_join" android:background="#43b0e1" android:padding="5sp" android:focusable="false" android:layout_width="0sp" android:layout_height="wrap_content" android:text="@string/join" android:layout_weight="1.5"/>
+    </LinearLayout>
+</LinearLayout>

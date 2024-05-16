@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:background="#ece8e8" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="50sp">
+            <Button android:textSize="20sp" android:textStyle="bold" android:background="#ece8e8" android:layout_width="0sp" android:layout_height="50sp" android:layout_weight="1" android:onClick="back_to_mine" android:drawableEnd="@drawable/turn_left"/>
+            <TextView android:textSize="20sp" android:textStyle="bold" android:textColor="@color/black" android:gravity="center" android:layout_width="0sp" android:layout_height="50sp" android:text="@string/setting" android:layout_weight="8"/>
+            <TextView android:layout_width="0sp" android:layout_height="50sp" android:layout_weight="1"/>
+        </LinearLayout>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="10sp" android:layout_marginTop="5sp" android:text="@string/account"/>
+        <LinearLayout android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5sp">
+            <Button android:textSize="20sp" android:textStyle="bold" android:gravity="center_vertical" android:background="@color/white" android:paddingLeft="10sp" android:layout_width="match_parent" android:layout_height="45sp" android:text="@string/account_management" android:drawableRight="@drawable/next_page" android:onClick="account_management"/>
+        </LinearLayout>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="10sp" android:layout_marginTop="5sp" android:text="@string/title_information"/>
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5sp">
+            <Switch android:textSize="20sp" android:textStyle="bold" android:gravity="center_vertical" android:background="@color/white" android:paddingLeft="10sp" android:layout_width="match_parent" android:layout_height="45sp" android:text="@string/Receive_push_notifications"/>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5sp">
+            <Switch android:textSize="20sp" android:textStyle="bold" android:gravity="center_vertical" android:background="@color/white" android:paddingLeft="10sp" android:layout_width="match_parent" android:layout_height="45sp" android:text="@string/Message_details"/>
+        </LinearLayout>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="10sp" android:layout_marginTop="5sp" android:text="@string/privacy"/>
+        <LinearLayout android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5sp">
+            <Button android:textSize="20sp" android:textStyle="bold" android:gravity="center_vertical" android:background="@color/white" android:paddingLeft="10sp" android:layout_width="match_parent" android:layout_height="45sp" android:text="@string/privacy_policy" android:drawableRight="@drawable/next_page" android:onClick="go_to_privacy_policy"/>
+        </LinearLayout>
+        <LinearLayout android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5sp">
+            <Button android:textSize="20sp" android:textStyle="bold" android:gravity="center_vertical" android:background="@color/white" android:paddingLeft="10sp" android:layout_width="match_parent" android:layout_height="45sp" android:text="@string/user_agreement" android:drawableRight="@drawable/next_page" android:onClick="go_to_user_agreement"/>
+        </LinearLayout>
+        <LinearLayout android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5sp">
+            <Button android:textSize="20sp" android:textStyle="bold" android:gravity="center_vertical" android:background="@color/white" android:paddingLeft="10sp" android:layout_width="match_parent" android:layout_height="45sp" android:text="@string/personal_information_collection_checklist" android:drawableRight="@drawable/next_page" android:onClick="go_to_personal_information"/>
+        </LinearLayout>
+        <LinearLayout android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="15sp">
+            <Button android:textSize="20sp" android:textStyle="bold" android:gravity="center_vertical" android:background="@color/white" android:paddingLeft="10sp" android:layout_width="match_parent" android:layout_height="45sp" android:text="@string/about" android:drawableRight="@drawable/next_page" android:onClick="go_to_about"/>
+        </LinearLayout>
+        <Button android:textSize="20sp" android:textStyle="bold" android:textColor="#e9dc4e4e" android:background="@drawable/rounded_rect_red" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="20sp" android:layout_marginTop="50sp" android:layout_marginRight="20sp" android:text="@string/exit_logIn" android:onClick="exit_logIn"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

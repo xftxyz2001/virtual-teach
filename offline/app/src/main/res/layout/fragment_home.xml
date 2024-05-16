@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:background="#ece8e8" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:layout_gravity="center_vertical" android:background="@drawable/loading" android:layout_width="match_parent" android:layout_height="300sp" android:layout_marginTop="10sp" android:layout_marginStart="15sp" android:layout_marginEnd="15sp"/>
+            <GridLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30sp" android:rowCount="1" android:columnCount="3">
+                <Button android:gravity="center" android:id="@+id/go_to_news" android:background="@drawable/bt_news" android:layout_width="55sp" android:layout_height="55sp" android:layout_marginEnd="60sp"/>
+                <Button android:gravity="center" android:id="@+id/go_to_section" android:background="@drawable/bt_message" android:layout_width="55sp" android:layout_height="55sp" android:layout_marginEnd="60sp"/>
+                <Button android:gravity="center" android:id="@+id/go_to_meeting" android:background="@drawable/bt_meeting_reminder" android:layout_width="55sp" android:layout_height="55sp"/>
+            </GridLayout>
+            <GridLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5sp" android:rowCount="1" android:columnCount="3">
+                <TextView android:textSize="15sp" android:textStyle="bold" android:textColor="#3a3a3a" android:gravity="center" android:layout_width="65sp" android:layout_height="match_parent" android:text="新闻公告" android:layout_marginEnd="45sp"/>
+                <TextView android:textSize="15sp" android:textStyle="bold" android:textColor="#3a3a3a" android:gravity="center" android:layout_width="80sp" android:layout_height="match_parent" android:text="虚拟教研室" android:layout_marginEnd="40sp"/>
+                <TextView android:textSize="15sp" android:textStyle="bold" android:textColor="#3a3a3a" android:gravity="center" android:layout_width="65sp" android:layout_height="match_parent" android:text="会议提醒"/>
+            </GridLayout>
+            <GridLayout android:layout_gravity="center" android:paddingRight="25sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16sp" android:rowCount="1" android:columnCount="3" android:paddingStart="25sp">
+                <Button android:gravity="center" android:id="@+id/go_to_system" android:background="@drawable/bt_system_notifications" android:layout_width="55sp" android:layout_height="55sp" android:layout_marginEnd="60sp"/>
+                <Button android:gravity="center" android:id="@+id/go_to_self" android:background="@drawable/self" android:layout_width="55sp" android:layout_height="55sp" android:layout_marginEnd="60sp"/>
+                <Button android:gravity="center" android:id="@+id/go_to_myCourse" android:background="@drawable/bt_my_course" android:layout_width="55sp" android:layout_height="55sp"/>
+            </GridLayout>
+            <GridLayout android:layout_gravity="center" android:paddingRight="25sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5sp" android:rowCount="1" android:columnCount="3" android:paddingStart="25sp">
+                <TextView android:textSize="15sp" android:textStyle="bold" android:textColor="#3a3a3a" android:gravity="center" android:layout_width="65sp" android:layout_height="match_parent" android:text="系统公告" android:layout_marginEnd="50sp"/>
+                <TextView android:textSize="15sp" android:textStyle="bold" android:textColor="#3a3a3a" android:gravity="center" android:layout_width="65sp" android:layout_height="match_parent" android:text="个人信息" android:layout_marginEnd="50sp"/>
+                <TextView android:textSize="15sp" android:textStyle="bold" android:textColor="#3a3a3a" android:gravity="center" android:layout_width="65sp" android:layout_height="match_parent" android:text="我的课程"/>
+            </GridLayout>
+            <GridLayout android:layout_gravity="center" android:paddingRight="25sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16sp" android:rowCount="1" android:columnCount="3" android:paddingStart="25sp">
+                <Button android:gravity="center" android:id="@+id/go_to_myOutput" android:background="@drawable/bt_publish" android:layout_width="55sp" android:layout_height="55sp" android:layout_marginEnd="60sp"/>
+                <Button android:gravity="center" android:id="@+id/go_to_setting" android:background="@drawable/bt_set_up" android:layout_width="55sp" android:layout_height="55sp" android:layout_marginEnd="60sp"/>
+                <Button android:gravity="center" android:background="#ece8e8" android:layout_width="55sp" android:layout_height="55sp"/>
+            </GridLayout>
+            <GridLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5sp" android:layout_marginBottom="80sp" android:rowCount="1" android:columnCount="3">
+                <TextView android:textSize="15sp" android:textStyle="bold" android:textColor="#3a3a3a" android:gravity="center" android:layout_width="65sp" android:layout_height="match_parent" android:text="我的发布" android:layout_marginStart="10sp" android:layout_marginEnd="60sp"/>
+                <TextView android:textSize="15sp" android:textStyle="bold" android:textColor="#3a3a3a" android:gravity="center" android:layout_width="45sp" android:layout_height="match_parent" android:text="设置" android:layout_marginEnd="80sp"/>
+                <TextView android:textSize="15sp" android:textStyle="bold" android:textColor="#3a3a3a" android:gravity="center" android:layout_width="60sp" android:layout_height="match_parent"/>
+            </GridLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

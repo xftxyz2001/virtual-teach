@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView android:layout_width="0sp" android:layout_height="wrap_content" android:layout_marginTop="5sp" android:layout_weight="2" android:drawableStart="@drawable/course" android:paddingStart="20sp"/>
+    <LinearLayout android:orientation="vertical" android:layout_width="0sp" android:layout_height="50sp" android:layout_marginTop="2.5sp" android:layout_weight="4.3">
+        <TextView android:textSize="15sp" android:textStyle="bold" android:textColor="@color/black" android:gravity="center_vertical" android:id="@+id/course_name" android:layout_width="match_parent" android:layout_height="25sp" android:layout_marginStart="25sp"/>
+        <TextView android:textStyle="bold" android:textColor="@color/black" android:gravity="center_vertical" android:id="@+id/teacher_name" android:layout_width="match_parent" android:layout_height="20sp" android:layout_marginBottom="10sp" android:layout_marginStart="25sp"/>
+    </LinearLayout>
+    <TextView android:layout_width="0sp" android:layout_height="40sp" android:layout_marginTop="3.5sp" android:layout_weight="3.7" android:drawableEnd="@drawable/next_page"/>
+</LinearLayout>

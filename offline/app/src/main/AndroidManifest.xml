@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1"
+    android:versionName="1.0" android:compileSdkVersion="32" android:compileSdkVersionCodename="12"
+    package="com.example.myapplication" platformBuildVersionCode="32" platformBuildVersionName="12">
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="32" />
+    <application android:theme="@style/Theme.MyApplication" android:label="虚拟教研室系统"
+        android:icon="@drawable/virtual_teach_research_section" android:debuggable="true"
+        android:testOnly="true" android:allowBackup="true" android:supportsRtl="true"
+        android:fullBackupContent="@xml/backup_rules"
+        android:roundIcon="@drawable/virtual_teach_research_section"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:dataExtractionRules="@xml/data_extraction_rules">
+        <activity android:name="com.example.myapplication.suggestion" android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:label="@string/join_teachResearch_section"
+            android:name="com.example.myapplication.join_teachResearch_section"
+            android:exported="false"
+            android:parentActivityName="com.example.myapplication.virtual_teachResearch_section">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:name="com.example.myapplication.personal_information_collection_checklist"
+            android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:name="com.example.myapplication.user_agreement" android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:name="com.example.myapplication.privacy_policy" android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:name="com.example.myapplication.about" android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:label="@string/system_notifications"
+            android:name="com.example.myapplication.system_notifications" android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:name="com.example.myapplication.Meeting_Reminder" android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:name="com.example.myapplication.MyCreateSection" android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:name="com.example.myapplication.MyJoinSection" android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:name="com.example.myapplication.create_virtual_teachResearch_section"
+            android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:label="@string/teachResearch_section"
+            android:name="com.example.myapplication.virtual_teachResearch_section"
+            android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:label="@string/news_announcement"
+            android:name="com.example.myapplication.news_announcement" android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:label="@string/edit_telephone_num"
+            android:name="com.example.myapplication.edit_telephone_num" android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:label="@string/edit_personal_sign"
+            android:name="com.example.myapplication.edit_personal_signature"
+            android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:label="@string/setting" android:name="com.example.myapplication.setting"
+            android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:label="@string/my_register_org"
+            android:name="com.example.myapplication.examination" android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:label="@string/my_post"
+            android:name="com.example.myapplication.homework_management" android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:label="@string/my_course"
+            android:name="com.example.myapplication.course_management" android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:label="@string/edit_personalInfo"
+            android:name="com.example.myapplication.editPersonalInfo" android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:label="@string/create_user"
+            android:name="com.example.myapplication.create_User" android:exported="false"
+            android:parentActivityName="com.example.myapplication.register">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:label="@string/register_"
+            android:name="com.example.myapplication.register" android:exported="false"
+            android:parentActivityName="com.example.myapplication.logIn">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:label="@string/title_activity_main_page"
+            android:name="com.example.myapplication.Main_Page" android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:label="@string/reset_Pwd"
+            android:name="com.example.myapplication.reset_Pwd" android:exported="false"
+            android:parentActivityName="com.example.myapplication.forgetPwd">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:label="@string/forget" android:name="com.example.myapplication.forgetPwd"
+            android:exported="false" android:parentActivityName="com.example.myapplication.logIn">
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:name="com.example.myapplication.MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data android:name="android.app.lib_name" android:value="" />
+        </activity>
+        <activity android:name="com.example.myapplication.logIn" />
+        <provider android:name="androidx.startup.InitializationProvider" android:exported="false"
+            android:authorities="com.example.myapplication.androidx-startup">
+            <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+        </provider>
+        <uses-library android:name="androidx.window.extensions" android:required="false" />
+        <uses-library android:name="androidx.window.sidecar" android:required="false" />
+    </application>
+</manifest>

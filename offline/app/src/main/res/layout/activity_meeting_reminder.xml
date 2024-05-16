@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:background="#ece8e8" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Button android:textSize="20sp" android:textStyle="bold" android:textColor="#0cb2e4" android:background="@color/white" android:layout_width="0sp" android:layout_height="wrap_content" android:layout_weight="1" android:onClick="back_to_information" android:drawableEnd="@drawable/turn_left"/>
+            <TextView android:textSize="20sp" android:textStyle="bold" android:textColor="@color/black" android:gravity="center" android:layout_width="0sp" android:layout_height="wrap_content" android:text="@string/meeting_reminder" android:layout_weight="8"/>
+            <Button android:textSize="20sp" android:textStyle="bold" android:textColor="#0cb2e4" android:background="@color/white" android:layout_width="0sp" android:layout_height="wrap_content" android:layout_weight="1" android:onClick="create_meeting" android:drawableEnd="@drawable/add"/>
+        </LinearLayout>
+        <TextView android:textStyle="bold" android:textColor="#423e3e" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10sp" android:layout_marginBottom="8sp" android:text="@string/meeting" android:layout_marginStart="30sp"/>
+        <ListView android:id="@+id/lv_meeting" android:layout_width="match_parent" android:layout_height="0sp" android:layout_weight="1"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

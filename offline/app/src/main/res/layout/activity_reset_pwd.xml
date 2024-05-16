@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:id="@+id/reset_pwd" android:layout_width="match_parent" android:layout_height="match_parent">
+        <TextView android:textSize="30sp" android:textStyle="bold" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40sp" android:layout_marginTop="45sp" android:layout_marginBottom="35sp" android:text="@string/reset_Pwd" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="45sp" android:text="@string/new_pwd"/>
+        <EditText android:id="@+id/new_pwd" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="40sp" android:layout_marginRight="40sp" android:layout_marginBottom="20sp" android:minHeight="48dp" android:hint="@string/input_new_pwd" android:maxLength="11" android:inputType="textPassword"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="45sp" android:text="@string/new_pwd_confirm"/>
+        <EditText android:id="@+id/new_pwd_confirm" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="40sp" android:layout_marginRight="40sp" android:layout_marginBottom="20sp" android:minHeight="48dp" android:hint="@string/input_new_pwd_confirm" android:maxLength="10" android:inputType="textPassword"/>
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="40sp" android:layout_marginRight="40sp">
+            <Button android:textColor="@color/white" android:id="@+id/confirm_modify" android:background="#578bf3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/confirm_modify" android:layout_alignParentRight="true" android:onClick="confirm_modify"/>
+            <Button android:textColor="@color/white" android:id="@+id/cancel" android:background="#578bf3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cancel" android:layout_alignParentLeft="true" android:onClick="cancel"/>
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

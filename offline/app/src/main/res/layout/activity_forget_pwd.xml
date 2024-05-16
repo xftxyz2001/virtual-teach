@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:id="@+id/forget_pwd_page" android:layout_width="match_parent" android:layout_height="match_parent">
+        <TextView android:textSize="30sp" android:textStyle="bold" android:textColor="@color/black" android:id="@+id/forget_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40sp" android:layout_marginTop="45sp" android:layout_marginBottom="35sp" android:text="@string/forget_2" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="45sp" android:text="@string/user_name"/>
+        <EditText android:id="@+id/userName" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="40sp" android:layout_marginRight="40sp" android:layout_marginBottom="20sp" android:minHeight="48dp" android:hint="@string/input_user_name" android:maxLength="10" android:inputType="text"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="45sp" android:text="@string/telephone_num"/>
+        <EditText android:id="@+id/telephone_num" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="40sp" android:layout_marginRight="40sp" android:layout_marginBottom="20sp" android:minHeight="48dp" android:hint="@string/input_telephone_num" android:maxLength="11" android:inputType="phone"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="45sp" android:text="@string/verify_code"/>
+        <EditText android:id="@+id/verify_code" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="40sp" android:layout_marginRight="40sp" android:layout_marginBottom="20sp" android:minHeight="48dp" android:hint="@string/input_verify_code" android:maxLength="6" android:inputType="text"/>
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="40sp" android:layout_marginRight="40sp">
+            <Button android:textColor="@color/white" android:id="@+id/send_Verify_code" android:background="#578bf3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/get_verify_code" android:layout_alignParentLeft="true" android:onClick="send_verify_num"/>
+            <Button android:textColor="@color/white" android:id="@+id/next_step" android:background="#578bf3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/next_step" android:layout_alignParentRight="true" android:onClick="goNext"/>
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

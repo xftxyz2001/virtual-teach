@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:background="#ece8e8" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ScrollView android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5sp" android:layout_marginStart="5sp" android:layout_marginEnd="5sp">
+                <TextView android:textStyle="bold" android:textColor="#cd1f1f" android:gravity="center" android:layout_width="0sp" android:layout_height="wrap_content" android:text="*" android:layout_weight="0.5"/>
+                <TextView android:textSize="17sp" android:textStyle="bold" android:textColor="@color/black" android:layout_width="0sp" android:layout_height="wrap_content" android:text="选择反馈问题的类型（必填）" android:layout_weight="9.5"/>
+            </LinearLayout>
+            <RadioGroup android:orientation="vertical" android:id="@+id/rg_ques_type" android:background="#f8f4f4" android:layout_width="380sp" android:layout_height="wrap_content" android:layout_marginTop="15sp" android:layout_marginStart="15sp" android:layout_marginEnd="25sp">
+                <RadioButton android:textSize="15sp" android:textStyle="bold" android:id="@+id/base_func" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/base_func"/>
+                <RadioButton android:textSize="15sp" android:textStyle="bold" android:id="@+id/crash_flashback" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/crash_flashback"/>
+                <RadioButton android:textSize="15sp" android:textStyle="bold" android:id="@+id/display_abnormalities" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/display_abnormalities"/>
+                <RadioButton android:textSize="15sp" android:textStyle="bold" android:id="@+id/sys_inform" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sys_inform"/>
+                <RadioButton android:textSize="15sp" android:textStyle="bold" android:id="@+id/else_problem" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/else_problem"/>
+            </RadioGroup>
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="15sp" android:layout_marginStart="5sp" android:layout_marginEnd="5sp">
+                <TextView android:textStyle="bold" android:textColor="#cd1f1f" android:gravity="center" android:layout_width="0sp" android:layout_height="wrap_content" android:text="*" android:layout_weight="0.5"/>
+                <TextView android:textSize="17sp" android:textStyle="bold" android:textColor="@color/black" android:layout_width="0sp" android:layout_height="wrap_content" android:text="问题描述（必填）" android:layout_weight="9.5"/>
+            </LinearLayout>
+            <EditText android:textSize="15sp" android:gravity="top" android:id="@+id/ques_describe" android:background="#f8f4f4" android:layout_width="match_parent" android:layout_height="200sp" android:layout_marginTop="15sp" android:hint="@string/ques_describe" android:maxLength="200" android:layout_marginStart="15sp" android:layout_marginEnd="15sp"/>
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="15sp" android:layout_marginStart="5sp" android:layout_marginEnd="5sp">
+                <TextView android:textStyle="bold" android:textColor="#cd1f1f" android:gravity="center" android:layout_width="0sp" android:layout_height="wrap_content" android:text="*" android:layout_weight="0.5"/>
+                <TextView android:textSize="17sp" android:textStyle="bold" android:textColor="@color/black" android:layout_width="0sp" android:layout_height="wrap_content" android:text="联系方式（必填）" android:layout_weight="9.5"/>
+            </LinearLayout>
+            <EditText android:textSize="20sp" android:gravity="top" android:layout_gravity="center_vertical" android:id="@+id/contact_information" android:background="#f8f4f4" android:layout_width="match_parent" android:layout_height="40sp" android:layout_marginTop="15sp" android:hint="请输入您的联系方式" android:maxLength="11" android:inputType="number" android:layout_marginStart="15sp" android:layout_marginEnd="15sp"/>
+            <Button android:textSize="20sp" android:textColor="@color/white" android:background="#578bf3" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="30sp" android:layout_marginBottom="75sp" android:text="@string/commit" android:onClick="commit_suggestion" android:layout_marginStart="15sp" android:layout_marginEnd="15sp"/>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

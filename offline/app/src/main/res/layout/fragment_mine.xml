@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:background="#ece8e8" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <Button android:textSize="25sp" android:gravity="center_vertical" android:id="@+id/edit_personal_info" android:background="@color/white" android:paddingLeft="5sp" android:paddingRight="5sp" android:layout_width="match_parent" android:layout_height="80sp" android:layout_marginTop="5sp" android:layout_marginBottom="5sp" android:drawablePadding="25sp" android:drawableStart="@drawable/user" android:drawableEnd="@drawable/next_page"/>
+        <Button android:textSize="25sp" android:gravity="center_vertical" android:id="@+id/course_management" android:background="@color/white" android:paddingLeft="12.5sp" android:paddingRight="5sp" android:layout_width="match_parent" android:layout_height="80sp" android:layout_marginTop="5sp" android:text="@string/my_course" android:drawableLeft="@android:drawable/btn_star_big_on" android:drawableRight="@drawable/next_page" android:drawablePadding="25sp"/>
+        <Button android:textSize="25sp" android:gravity="center_vertical" android:id="@+id/homework_management" android:background="@color/white" android:paddingLeft="12.5sp" android:paddingRight="5sp" android:layout_width="match_parent" android:layout_height="80sp" android:text="@string/my_post" android:drawableLeft="@android:drawable/ic_input_get" android:drawableRight="@drawable/next_page" android:drawablePadding="25sp"/>
+        <Button android:textSize="25sp" android:gravity="center_vertical" android:id="@+id/setting" android:background="@color/white" android:paddingLeft="12.5sp" android:paddingRight="5sp" android:layout_width="match_parent" android:layout_height="80sp" android:layout_marginTop="10sp" android:text="@string/setting" android:drawableLeft="@drawable/setting" android:drawableRight="@drawable/next_page" android:drawablePadding="25sp"/>
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="25sp" android:text="@string/net_address" android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10sp" android:text="@string/download_address" android:layout_centerInParent="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

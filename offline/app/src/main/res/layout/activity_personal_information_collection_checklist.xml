@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:background="#ece8e8" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:paddingBottom="50sp" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="50sp">
+                <Button android:textSize="20sp" android:textStyle="bold" android:background="#ece8e8" android:layout_width="0sp" android:layout_height="50sp" android:layout_weight="1" android:onClick="back_to_setting" android:drawableEnd="@drawable/turn_left"/>
+                <TextView android:textSize="20sp" android:textStyle="bold" android:textColor="@color/black" android:gravity="center" android:layout_width="0sp" android:layout_height="50sp" android:text="@string/personal_information_collection_checklist" android:layout_weight="8"/>
+                <TextView android:layout_width="0sp" android:layout_height="50sp" android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView android:textStyle="normal|bold|italic" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginTop="15sp" android:text="@string/entry_into_force_time" android:paddingStart="270sp"/>
+            <TextView android:textStyle="bold" android:id="@+id/personal_information" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginTop="20sp" android:layout_marginStart="10sp" android:layout_marginEnd="10sp"/>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

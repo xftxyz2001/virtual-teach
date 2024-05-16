@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:background="@drawable/background" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:id="@+id/LogIn" android:background="@drawable/rounded_rect" android:padding="30sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:layout_centerHorizontal="true">
+        <TextView android:textSize="25sp" android:textStyle="normal|bold|italic" android:textColor="#ff7e7e" android:id="@+id/welcome" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="20sp" android:text="@string/welcome"/>
+        <EditText android:textColorHint="#fff1f1" android:id="@+id/userName" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:hint="@string/input_user_name" android:maxLength="10" android:inputType="number"/>
+        <EditText android:textColorHint="#fff1f1" android:id="@+id/password" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/input_password" android:maxLength="10" android:inputType="textPassword"/>
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="0sp">
+            <Button android:textColor="@color/white" android:background="#00578bf3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/register" android:layout_alignParentRight="true" android:onClick="go_to_register"/>
+        </RelativeLayout>
+        <RelativeLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="0sp">
+            <Button android:textColor="@color/white" android:id="@+id/forget_pwd" android:background="#578bf3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/forget" android:layout_alignParentLeft="true" android:onClick="forgetPwd_Click"/>
+            <Button android:textColor="@color/white" android:id="@+id/login_button" android:background="#578bf3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/login" android:layout_alignParentRight="true" android:onClick="logIn_Click"/>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

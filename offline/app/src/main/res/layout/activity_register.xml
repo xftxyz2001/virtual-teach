@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="30sp" android:textStyle="bold" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="45sp" android:layout_marginBottom="35sp" android:text="@string/verify_identity" android:layout_marginStart="40sp" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/teacher_num" android:layout_marginStart="45sp"/>
+        <EditText android:id="@+id/input_teacher_num" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="40sp" android:layout_marginRight="40sp" android:layout_marginBottom="12.5sp" android:minHeight="48dp" android:hint="@string/input_teacher_num" android:maxLength="10" android:inputType="text"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/name" android:layout_marginStart="45sp"/>
+        <EditText android:id="@+id/name" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="40sp" android:layout_marginRight="40sp" android:layout_marginBottom="12.5sp" android:minHeight="48dp" android:hint="@string/input_name" android:maxLength="10" android:inputType="text"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="45sp" android:text="@string/affiliated_department"/>
+        <Spinner android:id="@+id/select_department" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="30sp" android:layout_marginRight="40sp" android:layout_marginBottom="12.5sp" android:minHeight="48dp" android:spinnerMode="dialog"/>
+        <Button android:textSize="20sp" android:textColor="@color/white" android:background="#578bf3" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="40sp" android:layout_marginRight="40sp" android:text="@string/next_step" android:onClick="go_to_createUser"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

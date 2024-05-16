@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:background="#ece8e8" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:background="#5e00bcd4" android:layout_width="match_parent" android:layout_height="80sp">
+            <Button android:textSize="20sp" android:textStyle="bold" android:background="#00ece8e8" android:layout_width="match_parent" android:layout_height="wrap_content" android:onClick="back_to_mine" android:drawableStart="@drawable/turn_left"/>
+        </LinearLayout>
+        <androidx.cardview.widget.CardView android:id="@+id/card" android:layout_width="match_parent" android:layout_height="180sp" android:layout_marginLeft="20sp" android:layout_marginTop="-30sp" android:layout_marginRight="20sp" app:cardCornerRadius="20sp" app:cardElevation="0dp"/>
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="-230sp">
+            <Button android:id="@+id/head_sculpture" android:background="#00000000" android:paddingTop="15sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:drawableTop="@drawable/user" android:layout_centerHorizontal="true"/>
+            <TextView android:textSize="20sp" android:textStyle="bold" android:textColor="@color/black" android:id="@+id/nick_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@+id/head_sculpture" android:layout_centerHorizontal="true"/>
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="20sp" android:layout_below="@+id/nick_name">
+                <Button android:textStyle="bold" android:background="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="70sp" android:text="@string/sign_in" android:onClick="Daily_Attendance"/>
+                <TextView android:textStyle="bold" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40sp" android:text="您已参加教研"/>
+                <TextView android:textStyle="bold" android:textColor="@color/black" android:id="@+id/sign_in_day" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5sp" android:layout_marginRight="5sp" android:text="9"/>
+                <TextView android:textStyle="bold" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="天"/>
+            </LinearLayout>
+        </RelativeLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="30sp" android:layout_below="@+id/card">
+            <LinearLayout android:orientation="horizontal" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="20sp" android:textStyle="bold" android:textColor="@color/black" android:gravity="center" android:layout_width="0sp" android:layout_height="wrap_content" android:text="@string/name" android:layout_weight="3"/>
+                <Button android:textSize="20sp" android:textStyle="bold" android:textColor="#0cb2e4" android:id="@+id/teacher_name_1" android:background="@color/white" android:layout_width="0sp" android:layout_height="wrap_content" android:drawableRight="@drawable/next_page" android:layout_weight="7" android:onClick="edit_name"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="20sp" android:textStyle="bold" android:textColor="@color/black" android:gravity="center" android:layout_width="0sp" android:layout_height="wrap_content" android:text="@string/teacher_num" android:layout_weight="3"/>
+                <Button android:textSize="20sp" android:textStyle="bold" android:textColor="#0cb2e4" android:id="@+id/edit_user_teacher_num" android:background="@color/white" android:layout_width="0sp" android:layout_height="wrap_content" android:drawableRight="@drawable/next_page" android:layout_weight="7" android:onClick="edit_student_num"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="20sp" android:textStyle="bold" android:textColor="@color/black" android:gravity="center" android:layout_width="0sp" android:layout_height="wrap_content" android:text="@string/affiliated_department" android:layout_weight="3"/>
+                <Button android:textSize="20sp" android:textStyle="bold" android:textColor="#0cb2e4" android:id="@+id/department" android:background="@color/white" android:layout_width="0sp" android:layout_height="wrap_content" android:drawableRight="@drawable/next_page" android:layout_weight="7" android:onClick="edit_department"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="20sp" android:textStyle="bold" android:textColor="@color/black" android:gravity="center" android:layout_width="0sp" android:layout_height="wrap_content" android:text="@string/personal_signature" android:layout_weight="3"/>
+                <Button android:textSize="20sp" android:textStyle="bold" android:textColor="#0cb2e4" android:id="@+id/sign" android:background="@color/white" android:layout_width="0sp" android:layout_height="wrap_content" android:drawableRight="@drawable/next_page" android:layout_weight="7" android:onClick="edit_personal_sign"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="20sp" android:textStyle="bold" android:textColor="@color/black" android:gravity="center" android:layout_width="0sp" android:layout_height="wrap_content" android:text="@string/telephone_num" android:layout_weight="3"/>
+                <Button android:textSize="20sp" android:textStyle="bold" android:textColor="#0cb2e4" android:id="@+id/telephone_number" android:background="@color/white" android:layout_width="0sp" android:layout_height="wrap_content" android:drawableRight="@drawable/next_page" android:layout_weight="7" android:onClick="edit_telephone_num"/>
+            </LinearLayout>
+        </LinearLayout>
+        <Button android:textSize="20sp" android:textStyle="bold" android:textColor="#e9dc4e4e" android:background="@drawable/rounded_rect_red" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="20sp" android:layout_marginTop="50sp" android:layout_marginRight="20sp" android:text="@string/exit_logIn" android:onClick="exit_logIn"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

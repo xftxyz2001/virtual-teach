@@ -1,10 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.SettingActivity">
+    android:background="#ece8e8">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="0sp"
+                android:layout_height="50sp"
+                android:layout_weight="1"
+                android:background="#ece8e8"
+                android:drawableEnd="@drawable/turn_left"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="50sp"
+                android:layout_weight="8"
+                android:gravity="center"
+                android:text="@string/setting"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="50sp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:layout_marginTop="5sp"
+            android:text="@string/account" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:background="@color/white">
+
+            <Button
+                android:id="@+id/btn_setting_account_management"
+                android:layout_width="match_parent"
+                android:layout_height="45sp"
+                android:background="@color/white"
+                android:drawableRight="@drawable/next_page"
+                android:gravity="center_vertical"
+                android:paddingLeft="10sp"
+                android:text="@string/account_management"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:layout_marginTop="5sp"
+            android:text="@string/title_information" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <Switch
+                android:id="@+id/switch_setting_receive_push_notifications"
+                android:layout_width="match_parent"
+                android:layout_height="45sp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="10sp"
+                android:text="@string/receive_push_notifications"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <Switch
+                android:id="@+id/switch_setting_notification_details"
+                android:layout_width="match_parent"
+                android:layout_height="45sp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="10sp"
+                android:text="@string/message_details"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:layout_marginTop="5sp"
+            android:text="@string/privacy" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:background="@color/white">
+
+            <Button
+                android:id="@+id/btn_setting_privacy_policy"
+                android:layout_width="match_parent"
+                android:layout_height="45sp"
+                android:background="@color/white"
+                android:drawableRight="@drawable/next_page"
+                android:gravity="center_vertical"
+                android:paddingLeft="10sp"
+                android:text="@string/privacy_policy"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:background="@color/white">
+
+            <Button
+                android:id="@+id/btn_setting_user_agreement"
+                android:layout_width="match_parent"
+                android:layout_height="45sp"
+                android:background="@color/white"
+                android:drawableRight="@drawable/next_page"
+                android:gravity="center_vertical"
+                android:paddingLeft="10sp"
+                android:text="@string/user_agreement"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:background="@color/white">
+
+            <Button
+                android:id="@+id/btn_setting_personal_information_collection_checklist"
+                android:layout_width="match_parent"
+                android:layout_height="45sp"
+                android:background="@color/white"
+                android:drawableRight="@drawable/next_page"
+                android:gravity="center_vertical"
+                android:paddingLeft="10sp"
+                android:text="@string/personal_information_collection_checklist"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+            android:background="@color/white">
+
+            <Button
+                android:id="@+id/btn_setting_about"
+                android:layout_width="match_parent"
+                android:layout_height="45sp"
+                android:background="@color/white"
+                android:drawableRight="@drawable/next_page"
+                android:gravity="center_vertical"
+                android:paddingLeft="10sp"
+                android:text="@string/about"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_setting_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_marginTop="50sp"
+            android:layout_marginRight="20sp"
+            android:background="@drawable/rounded_rect_red"
+            android:text="@string/exit_login"
+            android:textColor="#e9dc4e4e"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

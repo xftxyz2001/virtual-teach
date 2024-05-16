@@ -44,8 +44,34 @@
     <string name="meeting_reminder">会议提醒</string>
     <string name="system_notifications">系统通知</string>
 
-    <string name="Message_details">通知栏显示消息详情</string>
-    <string name="Receive_push_notifications">接收推送通知</string>
+    <!--  section  -->
+    <string name="section">教研室</string>
+
+    <!--  notification  -->
+    <string name="system_information">系统消息</string>
+
+    <!--  profile  -->
+    <string name="daily_sign">每日签到</string>
+    <string name="affiliated_department">所属学院</string>
+    <string name="personal_signature">个性签名</string>
+    <string name="exit_login">退出登录</string>
+
+    <!--  course  -->
+    <string name="my_teach_course">我教授的课程</string>
+
+    <!--  post  -->
+    <string name="my_publish">我的发布</string>
+
+    <!--  setting  -->
+    <string name="account_management">账号管理</string>
+    <string name="receive_push_notifications">接收推送通知</string>
+    <string name="message_details">通知栏显示消息详情</string>
+    <string name="privacy">隐私</string>
+    <string name="privacy_policy">隐私政策</string>
+    <string name="user_agreement">用户协议</string>
+    <string name="personal_information_collection_checklist">个人信息收集清单</string>
+    <string name="about">关于</string>
+
     <string name="_2240946193_qq_com">电子邮件：2240946193@qq.com</string>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_up_description">Navigate up</string>
@@ -74,11 +100,8 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <string name="about">关于</string>
     <string name="academic_trend">学术动态</string>
     <string name="account">账号</string>
-    <string name="account_management">账号管理</string>
-    <string name="affiliated_department">所属学院</string>
     <string name="androidx_startup">androidx.startup</string>
     <string name="appbar_scrolling_view_behavior">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
     <string name="apply_to_join">申请加入</string>
@@ -103,7 +126,6 @@
     <string name="else_problem">其他</string>
     <string name="entry_into_force_time">生效时间:2024-03-27</string>
     <string name="error_icon_content_description">Error</string>
-    <string name="exit_logIn">退出登录</string>
     <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
     <string name="fab_transformation_scrim_behavior">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
@@ -212,9 +234,7 @@
     <string name="mtrl_timepicker_confirm">OK</string>
     <string name="myCreate">我创建的教研室</string>
     <string name="myJoin">我加入的教研室</string>
-    <string name="my_publish">我的发布</string>
     <string name="my_register_org">我注册的组织</string>
-    <string name="my_teach_course">我教授的课程</string>
     <string name="nav_app_bar_navigate_up_description">Navigate up</string>
     <string name="nav_app_bar_open_drawer_description">Open navigation drawer</string>
     <string name="new_local_version">检测新版本</string>
@@ -230,10 +250,6 @@
     <string name="path_password_eye_mask_strike_through">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_eye_mask_visible">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_strike_through">M3.27,4.27 L19.74,20.74</string>
-    <string name="personal_information_collection_checklist">个人信息收集清单</string>
-    <string name="personal_signature">个性签名</string>
-    <string name="privacy">隐私</string>
-    <string name="privacy_policy">隐私政策</string>
     <string name="privacy_policy_1">本隐私政策旨在说明我们如何收集、使用、处理和保护您的个人信息。请仔细阅读本隐私政策，以了解我们对您个人信息的处理方式。如果您对本隐私政策有任何疑问，请通过我们的联系方式与我们联系。</string>
     <string name="privacy_policy_10">联系我们：</string>
     <string name="privacy_policy_11">如果您对我们的隐私政策有任何疑问或意见，请通过以下方式与我们联系：</string>
@@ -252,16 +268,11 @@
     <string name="search_menu_title">Search</string>
     <string name="section_name">教研室名字</string>
     <string name="select_your_identity">请选择您的身份</string>
-    <string name="sign_in">每日签到</string>
     <string name="start_time">开始时间</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="suggestion_and_feedback">建议与反馈</string>
     <string name="sys_inform">系统通知</string>
-    <string name="system_information">系统消息</string>
     <string name="teachResearch_course">教研课程</string>
-    <string name="teachResearch_section">教研室</string>
     <string name="teachResearch_section_num">教研室编号</string>
     <string name="teacher">教师</string>
-    <string name="user_agreement">用户协议</string>
-    <string name="virtual_teachResearch_section">虚拟教研室</string>
 </resources>

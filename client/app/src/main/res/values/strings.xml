@@ -105,6 +105,14 @@
     <string name="privacy_policy_9">我们可能与第三方共享您的个人信息，但我们将尽力确保这些第三方遵守适用的隐私法律和规定。</string>
     <string name="_2240946193_qq_com">电子邮件：2240946193@qq.com</string>
 
+    <!--  section  -->
+    <string name="my_created_section">我创建的教研室</string>
+    <string name="my_joined_section">我加入的教研室</string>
+
+    <string name="new_telephone_num">新电话号码</string>
+    <string name="finish_modify">完成修改</string>
+
+    <string name="please_input_personal_signature">请输入个性签名</string>
 
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_up_description">Navigate up</string>
@@ -157,7 +165,7 @@
     <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
     <string name="fab_transformation_scrim_behavior">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
-    <string name="finish_modify">完成修改</string>
+
     <string name="hide_bottom_view_on_scroll_behavior">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
     <string name="icon_content_description">Dialog Icon</string>
     <string name="input_new_pwd">请输入新密码</string>
@@ -259,14 +267,13 @@
     <string name="mtrl_picker_toggle_to_text_input_mode">Switch to text input mode</string>
     <string name="mtrl_picker_toggle_to_year_selection">Tap to switch to selecting a year</string>
     <string name="mtrl_timepicker_confirm">OK</string>
-    <string name="myCreate">我创建的教研室</string>
-    <string name="myJoin">我加入的教研室</string>
+
     <string name="my_register_org">我注册的组织</string>
     <string name="nav_app_bar_navigate_up_description">Navigate up</string>
     <string name="nav_app_bar_open_drawer_description">Open navigation drawer</string>
     <string name="new_pwd">新密码</string>
     <string name="new_pwd_confirm">确认新密码</string>
-    <string name="new_telephone_num">新电话号码</string>
+
     <string name="news">新闻公告 |</string>
     <string name="nick_name">用户昵称(用户名为教职工号)</string>
     <string name="password">密码</string>

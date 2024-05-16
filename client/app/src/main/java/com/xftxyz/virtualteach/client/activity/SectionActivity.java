@@ -1,5 +1,6 @@
 package com.xftxyz.virtualteach.client.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -22,6 +23,16 @@ public class SectionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_section);
 
         initWidgets();
+        initListeners();
+    }
+
+    private void initListeners() {
+        btnSectionJoined.setOnClickListener(v -> {
+            startActivity(new Intent(SectionActivity.this, MyJoinSectionActivity.class));
+        });
+        btnSectionCreated.setOnClickListener(v -> {
+            startActivity(new Intent(SectionActivity.this, MyCreateSectionActivity.class));
+        });
     }
 
     private void initWidgets() {

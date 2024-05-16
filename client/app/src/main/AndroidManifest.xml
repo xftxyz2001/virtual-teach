@@ -13,6 +13,18 @@
         android:theme="@style/Theme.VirtualTeach"
         tools:targetApi="31">
         <activity
+            android:name=".activity.EditPersonalSignActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.EditTelephoneActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.MyCreateSectionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.MyJoinSectionActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.UserAgreementActivity"
             android:exported="false" />
         <activity

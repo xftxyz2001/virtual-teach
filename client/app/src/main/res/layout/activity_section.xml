@@ -62,7 +62,7 @@
             android:drawableRight="@drawable/next_page"
             android:gravity="center_vertical"
             android:paddingLeft="15sp"
-            android:text="@string/myJoin"
+            android:text="@string/my_joined_section"
             android:textColor="#363839"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -76,7 +76,7 @@
             android:drawableRight="@drawable/next_page"
             android:gravity="center_vertical"
             android:paddingLeft="15sp"
-            android:text="@string/myCreate"
+            android:text="@string/my_created_section"
             android:textColor="#363839"
             android:textSize="20sp"
             android:textStyle="bold" />

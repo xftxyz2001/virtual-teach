@@ -1,5 +1,8 @@
 package com.xftxyz.virtualteach.client.util;
 
+import android.os.Handler;
+import android.os.Looper;
+
 import androidx.annotation.NonNull;
 
 import com.google.gson.Gson;
@@ -41,7 +44,7 @@ public class OkHttpManager {
         }
 
         private String getToken() {
-            return UserPreferences.getToken(ContextHolder.getContext());
+            return UserPreferences.getToken();
         }
     };
 
@@ -58,7 +61,7 @@ public class OkHttpManager {
             if (handler == null) {
                 return;
             }
-            handler.onError(e);
+            new Handler(Looper.getMainLooper()).post(() -> handler.onError(e));
         }
 
         @Override
@@ -66,21 +69,23 @@ public class OkHttpManager {
             if (handler == null) {
                 return;
             }
-            try {
-                if (!response.isSuccessful()) {
-                    handler.onFailed(response.code(), response.message());
-                    return;
+            new Handler(Looper.getMainLooper()).post(() -> {
+                try {
+                    if (!response.isSuccessful()) {
+                        handler.onFailed(response.code(), response.message());
+                        return;
+                    }
+                    String result = response.body().string();
+                    JSONObject resultJSON = new JSONObject(result);
+                    if (resultJSON.getInt("code") != 0) {
+                        handler.onFailed(resultJSON.getInt("code"), resultJSON.getString("message"));
+                        return;
+                    }
+                    handler.onSuccess(resultJSON.getJSONObject("data"));
+                } catch (Exception e) {
+                    handler.onError(e);
                 }
-                String result = response.body().string();
-                JSONObject resultJSON = new JSONObject(result);
-                if (resultJSON.getInt("code") != 0) {
-                    handler.onFailed(resultJSON.getInt("code"), resultJSON.getString("message"));
-                    return;
-                }
-                handler.onSuccess(resultJSON.getJSONObject("data"));
-            } catch (Exception e) {
-                handler.onError(e);
-            }
+            });
         }
     }
 

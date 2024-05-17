@@ -10,8 +10,10 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.xftxyz.virtualteach.client.R;
+import com.xftxyz.virtualteach.client.util.ContextHolder;
 import com.xftxyz.virtualteach.client.util.OkHttpManager;
 import com.xftxyz.virtualteach.client.util.ResultHandler;
+import com.xftxyz.virtualteach.client.util.UserPreferences;
 
 import org.json.JSONObject;
 
@@ -64,7 +66,8 @@ public class LoginActivity extends AppCompatActivity {
             OkHttpManager.post("/api/user/login", requestBody, new ResultHandler() {
                 @Override
                 public void onSuccess(JSONObject data) throws Exception {
-
+                    UserPreferences.saveToken(data.getString("token"));
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 }
 
                 @Override
@@ -80,7 +83,7 @@ public class LoginActivity extends AppCompatActivity {
                 public void onError(Throwable t) {
                     new AlertDialog.Builder(LoginActivity.this)
                             .setTitle("提示")
-                            .setMessage("网络错误")
+                            .setMessage(t.getMessage())
                             .setPositiveButton("确定", null)
                             .show();
                 }

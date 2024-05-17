@@ -6,9 +6,20 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.xftxyz.virtualteach.client.R;
+import com.xftxyz.virtualteach.client.util.ContextHolder;
+import com.xftxyz.virtualteach.client.util.OkHttpManager;
+import com.xftxyz.virtualteach.client.util.ResultHandler;
+import com.xftxyz.virtualteach.client.util.UserPreferences;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -42,9 +53,37 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(v -> {
             String username = etUsername.getText().toString();
             String password = etPassword.getText().toString();
+            if (username.isEmpty() || password.isEmpty()) {
+                new AlertDialog.Builder(LoginActivity.this)
+                        .setTitle("提示")
+                        .setMessage("用户名或密码不能为空")
+                        .setPositiveButton("确定", null)
+                        .show();
+                return;
+            }
+            Map<String, Object> requestBody = new HashMap<>();
+            requestBody.put("login", username);
+            requestBody.put("password", password);
+            OkHttpManager.post("/api/user/login", requestBody, new ResultHandler() {
+                @Override
+                public void onSuccess(JSONObject result) {
+                    try {
+                        // 登录成功
+                        if (result.getInt("code") == 0) {
+                            JSONObject data = result.getJSONObject("data");
+                            UserPreferences.saveToken(ContextHolder.getContext(), data.getString("token"));
+                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        }
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
 
-            // 登录逻辑
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                @Override
+                public void onFail(String message) {
+
+                }
+            });
         });
     }
 

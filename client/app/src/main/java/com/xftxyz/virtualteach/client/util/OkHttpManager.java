@@ -20,6 +20,8 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class OkHttpManager {
+
+    private static final String BASE_URL = "http://localhost:8080";
     private static final long DEFAULT_TIMEOUT = 10; // 默认超时时间10秒
 
     private static OkHttpClient client;
@@ -71,7 +73,7 @@ public class OkHttpManager {
             url = urlBuilder.substring(0, urlBuilder.length() - 1);
         }
         Request request = new Request.Builder()
-                .url(url)
+                .url(BASE_URL + url)
                 .build();
         getClient().newCall(request).enqueue(new Callback() {
             @Override
@@ -95,10 +97,10 @@ public class OkHttpManager {
         });
     }
 
-    public static <T> void post(String url, Object data, ResultHandler handler) {
+    public static <T> void post(String url, Map<String, Object> data, ResultHandler handler) {
         RequestBody requestBody = RequestBody.create(JSON, GSON.toJson(data));
         Request request = new Request.Builder()
-                .url(url)
+                .url(BASE_URL + url)
                 .post(requestBody)
                 .build();
         getClient().newCall(request).enqueue(new Callback() {

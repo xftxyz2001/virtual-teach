@@ -25,8 +25,10 @@ public class OkHttpManager {
     private static final long DEFAULT_TIMEOUT = 10; // 默认超时时间10秒
 
     private static OkHttpClient client;
-    private static Gson GSON = new Gson();
-    private static MediaType JSON = MediaType.get("application/json; charset=utf-8");
+    private static final Gson GSON = new Gson();
+    private static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
+
+    // 拦截器
     private static final Interceptor TOKEN_INTERCEPTOR = new Interceptor() {
         @NonNull
         @Override
@@ -43,20 +45,60 @@ public class OkHttpManager {
         }
     };
 
+    // 结果处理
+    private static class MyCallback implements Callback {
+        private final ResultHandler handler;
+
+        public MyCallback(ResultHandler handler) {
+            this.handler = handler;
+        }
+
+        @Override
+        public void onFailure(@NonNull Call call, @NonNull IOException e) {
+            if (handler == null) {
+                return;
+            }
+            handler.onError(e);
+        }
+
+        @Override
+        public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+            if (handler == null) {
+                return;
+            }
+            try {
+                if (!response.isSuccessful()) {
+                    handler.onFailed(response.code(), response.message());
+                    return;
+                }
+                String result = response.body().string();
+                JSONObject resultJSON = new JSONObject(result);
+                if (resultJSON.getInt("code") != 0) {
+                    handler.onFailed(resultJSON.getInt("code"), resultJSON.getString("message"));
+                    return;
+                }
+                handler.onSuccess(resultJSON.getJSONObject("data"));
+            } catch (Exception e) {
+                handler.onError(e);
+            }
+        }
+    }
+
     private OkHttpManager() {
     }
 
     public static OkHttpClient getClient() {
-        if (client == null) {
-            synchronized (OkHttpManager.class) {
-                if (client == null) {
-                    client = new OkHttpClient.Builder()
-                            .connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
-                            .readTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
-                            .writeTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
-                            .addInterceptor(TOKEN_INTERCEPTOR)
-                            .build();
-                }
+        if (client != null) {
+            return client;
+        }
+        synchronized (OkHttpManager.class) {
+            if (client == null) {
+                client = new OkHttpClient.Builder()
+                        .connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
+                        .readTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
+                        .writeTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
+                        .addInterceptor(TOKEN_INTERCEPTOR)
+                        .build();
             }
         }
         return client;
@@ -75,53 +117,15 @@ public class OkHttpManager {
         Request request = new Request.Builder()
                 .url(BASE_URL + url)
                 .build();
-        getClient().newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                handler.onFail(e.getMessage());
-            }
-
-            @Override
-            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                if (response.isSuccessful()) {
-                    try {
-                        String result = response.body().string();
-                        handler.onSuccess(new JSONObject(result));
-                    } catch (Exception e) {
-                        handler.onFail(e.getMessage());
-                    }
-                } else {
-                    handler.onFail(response.message());
-                }
-            }
-        });
+        getClient().newCall(request).enqueue(new MyCallback(handler));
     }
 
-    public static <T> void post(String url, Map<String, Object> data, ResultHandler handler) {
+    public static void post(String url, Map<String, Object> data, ResultHandler handler) {
         RequestBody requestBody = RequestBody.create(JSON, GSON.toJson(data));
         Request request = new Request.Builder()
                 .url(BASE_URL + url)
                 .post(requestBody)
                 .build();
-        getClient().newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                handler.onFail(e.getMessage());
-            }
-
-            @Override
-            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                if (response.isSuccessful()) {
-                    try {
-                        String result = response.body().string();
-                        handler.onSuccess(new JSONObject(result));
-                    } catch (Exception e) {
-                        handler.onFail(e.getMessage());
-                    }
-                } else {
-                    handler.onFail(response.message());
-                }
-            }
-        });
+        getClient().newCall(request).enqueue(new MyCallback(handler));
     }
 }

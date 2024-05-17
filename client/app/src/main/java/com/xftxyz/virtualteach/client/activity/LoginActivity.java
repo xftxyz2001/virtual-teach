@@ -11,6 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.xftxyz.virtualteach.client.R;
 import com.xftxyz.virtualteach.client.util.OkHttpManager;
+import com.xftxyz.virtualteach.client.util.ResultHandler;
+
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -58,7 +61,30 @@ public class LoginActivity extends AppCompatActivity {
             Map<String, Object> requestBody = new HashMap<>();
             requestBody.put("login", username);
             requestBody.put("password", password);
-            OkHttpManager.post("/api/user/login", requestBody, null);
+            OkHttpManager.post("/api/user/login", requestBody, new ResultHandler() {
+                @Override
+                public void onSuccess(JSONObject data) throws Exception {
+
+                }
+
+                @Override
+                public void onFailed(Integer code, String message) {
+                    new AlertDialog.Builder(LoginActivity.this)
+                            .setTitle("提示")
+                            .setMessage(message)
+                            .setPositiveButton("确定", null)
+                            .show();
+                }
+
+                @Override
+                public void onError(Throwable t) {
+                    new AlertDialog.Builder(LoginActivity.this)
+                            .setTitle("提示")
+                            .setMessage("网络错误")
+                            .setPositiveButton("确定", null)
+                            .show();
+                }
+            });
         });
     }
 

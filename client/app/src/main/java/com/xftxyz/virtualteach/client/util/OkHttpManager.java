@@ -21,7 +21,7 @@ import okhttp3.Response;
 
 public class OkHttpManager {
 
-    private static final String BASE_URL = "http://localhost:8080";
+    private static final String BASE_URL = "http://10.0.2.2:8080";
     private static final long DEFAULT_TIMEOUT = 10; // 默认超时时间10秒
 
     private static OkHttpClient client;

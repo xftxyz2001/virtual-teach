@@ -29,7 +29,7 @@ public class NewsServiceImpl extends ServiceImpl<NewsMapper, News>
         List<TeachAndResearchSection> createdSections = teachAndResearchSectionMapper.selectList(
                 Wrappers.<TeachAndResearchSection>lambdaQuery().eq(TeachAndResearchSection::getGroupLeader, userId));
         return baseMapper.selectList(Wrappers.<News>lambdaQuery()
-                .in(News::getPublisher, createdSections.stream().map(TeachAndResearchSection::getId).toList()));
+                .in(News::getPublisher, createdSections.stream().map(TeachAndResearchSection::getId).toArray()));
     }
 }
 

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5sp"
+        android:layout_weight="1.6"
+        android:drawableStart="@drawable/section"
+        android:paddingStart="20sp" />
+
+    <LinearLayout
+        android:layout_width="0sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="2.5sp"
+        android:layout_weight="6.4"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_section_course_name"
+            android:layout_width="match_parent"
+            android:layout_height="25sp"
+            android:layout_marginStart="25sp"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_section_num"
+            android:layout_width="match_parent"
+            android:layout_height="20sp"
+            android:layout_marginStart="25sp"
+            android:layout_marginBottom="10sp"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="0sp"
+        android:layout_height="40sp"
+        android:layout_marginTop="3.5sp"
+        android:layout_weight="2"
+        android:drawableEnd="@drawable/next_page" />
+</LinearLayout>

@@ -65,8 +65,9 @@ public class LoginActivity extends AppCompatActivity {
             requestBody.put("password", password);
             OkHttpManager.post("/api/user/login", requestBody, new ResultHandler() {
                 @Override
-                public void onSuccess(JSONObject data) throws Exception {
-                    UserPreferences.saveToken(data.getString("token"));
+                public void onSuccess(Object data) throws Exception {
+                    JSONObject res = (JSONObject) data;
+                    UserPreferences.saveToken(res.getString("token"));
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 }
 

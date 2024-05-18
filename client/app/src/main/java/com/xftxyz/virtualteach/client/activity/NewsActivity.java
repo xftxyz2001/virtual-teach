@@ -30,7 +30,7 @@ public class NewsActivity extends AppCompatActivity {
     private void fetchNews() {
         OkHttpManager.get("/api/news/list", null, new ResultHandler() {
             @Override
-            public void onSuccess(JSONObject data) throws Exception {
+            public void onSuccess(Object data) throws Exception {
 
             }
 

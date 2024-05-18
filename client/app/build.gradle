@@ -33,7 +33,8 @@ android {
 
 dependencies {
 
-    implementation libs.lombok
+    compileOnly libs.lombok
+    annotationProcessor libs.lombok
     implementation libs.okhttp
     implementation libs.converter.gson
     implementation libs.appcompat

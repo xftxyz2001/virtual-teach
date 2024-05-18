@@ -28,7 +28,7 @@ public class OkHttpManager {
     private static final long DEFAULT_TIMEOUT = 10; // 默认超时时间10秒
 
     private static OkHttpClient client;
-    private static final Gson GSON = new Gson();
+//    private static final Gson GSON = new Gson();
     private static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
 
     // 拦截器
@@ -81,7 +81,7 @@ public class OkHttpManager {
                         handler.onFailed(resultJSON.getInt("code"), resultJSON.getString("message"));
                         return;
                     }
-                    handler.onSuccess(resultJSON.getJSONObject("data"));
+                    handler.onSuccess(resultJSON.get("data"));
                 } catch (Exception e) {
                     handler.onError(e);
                 }
@@ -126,7 +126,7 @@ public class OkHttpManager {
     }
 
     public static void post(String url, Map<String, Object> data, ResultHandler handler) {
-        RequestBody requestBody = RequestBody.create(JSON, GSON.toJson(data));
+        RequestBody requestBody = RequestBody.create(JSON, new JSONObject(data).toString());
         Request request = new Request.Builder()
                 .url(BASE_URL + url)
                 .post(requestBody)

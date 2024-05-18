@@ -7,6 +7,11 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.xftxyz.virtualteach.client.R;
+import com.xftxyz.virtualteach.client.adapter.NewsAdapter;
+import com.xftxyz.virtualteach.client.util.OkHttpManager;
+import com.xftxyz.virtualteach.client.util.ResultHandler;
+
+import org.json.JSONObject;
 
 public class NewsActivity extends AppCompatActivity {
 
@@ -19,6 +24,27 @@ public class NewsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_news);
 
         initWidgets();
+        fetchNews();
+    }
+
+    private void fetchNews() {
+        OkHttpManager.get("/api/news/list", null, new ResultHandler() {
+            @Override
+            public void onSuccess(JSONObject data) throws Exception {
+
+            }
+
+            @Override
+            public void onFailed(Integer code, String message) {
+
+            }
+
+            @Override
+            public void onError(Throwable t) {
+
+            }
+        });
+//        lvNews.setAdapter(new NewsAdapter());
     }
 
     private void initWidgets() {

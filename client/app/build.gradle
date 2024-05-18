@@ -33,6 +33,7 @@ android {
 
 dependencies {
 
+    implementation libs.lombok
     implementation libs.okhttp
     implementation libs.converter.gson
     implementation libs.appcompat

@@ -1,11 +1,32 @@
 package com.xftxyz.virtualteach.client.util;
 
-import org.json.JSONObject;
+import android.content.Context;
 
-public interface ResultHandler {
-    void onSuccess(Object data) throws Exception; // res.data
+import androidx.appcompat.app.AlertDialog;
 
-    void onFailed(Integer code, String message); // res.code, res.message
+public abstract class ResultHandler {
 
-    void onError(Throwable t);
+    private Context context;
+
+    public ResultHandler(Context context) {
+        this.context = context;
+    }
+
+    public abstract void onSuccess(Object data) throws Exception; // res.data
+
+    public void onFailed(Integer code, String message) {
+        new AlertDialog.Builder(context)
+                .setTitle("错误")
+                .setMessage("状态码：" + code + "\n" + message)
+                .setPositiveButton("确定", null)
+                .show();
+    }
+
+    public void onError(Throwable t) {
+        new AlertDialog.Builder(context)
+                .setTitle("错误")
+                .setMessage(t.getMessage())
+                .setPositiveButton("确定", null)
+                .show();
+    }
 }

@@ -10,7 +10,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.xftxyz.virtualteach.client.R;
-import com.xftxyz.virtualteach.client.util.ContextHolder;
 import com.xftxyz.virtualteach.client.util.OkHttpManager;
 import com.xftxyz.virtualteach.client.util.ResultHandler;
 import com.xftxyz.virtualteach.client.util.UserPreferences;
@@ -63,30 +62,13 @@ public class LoginActivity extends AppCompatActivity {
             Map<String, Object> requestBody = new HashMap<>();
             requestBody.put("login", username);
             requestBody.put("password", password);
-            OkHttpManager.post("/api/user/login", requestBody, new ResultHandler() {
+            OkHttpManager.post("/api/user/login", requestBody, new ResultHandler(LoginActivity.this) {
+
                 @Override
                 public void onSuccess(Object data) throws Exception {
                     JSONObject res = (JSONObject) data;
                     UserPreferences.saveToken(res.getString("token"));
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                }
-
-                @Override
-                public void onFailed(Integer code, String message) {
-                    new AlertDialog.Builder(LoginActivity.this)
-                            .setTitle("提示")
-                            .setMessage(message)
-                            .setPositiveButton("确定", null)
-                            .show();
-                }
-
-                @Override
-                public void onError(Throwable t) {
-                    new AlertDialog.Builder(LoginActivity.this)
-                            .setTitle("提示")
-                            .setMessage(t.getMessage())
-                            .setPositiveButton("确定", null)
-                            .show();
                 }
             });
         });

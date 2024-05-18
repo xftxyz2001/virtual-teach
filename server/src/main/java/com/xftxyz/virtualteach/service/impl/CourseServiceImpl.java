@@ -9,8 +9,11 @@ import com.xftxyz.virtualteach.mapper.TeacherCourseMapper;
 import com.xftxyz.virtualteach.service.CourseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ObjectUtils;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author 25810
@@ -34,7 +37,11 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course>
     public List<Course> getTeachedCourseList(Long userId) {
         List<TeacherCourse> teacherCourses = teacherCourseMapper.selectList(Wrappers.<TeacherCourse>lambdaQuery()
                 .eq(TeacherCourse::getUserId, userId));
-        return baseMapper.selectBatchIds(teacherCourses.stream().map(TeacherCourse::getCourseId).toList());
+        List<Long> ids = teacherCourses.stream().map(TeacherCourse::getCourseId).collect(Collectors.toList());
+        if (ObjectUtils.isEmpty(ids)) {
+            return new ArrayList<>();
+        }
+        return baseMapper.selectBatchIds(ids);
     }
 }
 

@@ -14,7 +14,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author 25810
@@ -49,8 +51,11 @@ public class SectionUserServiceImpl extends ServiceImpl<SectionUserMapper, Secti
     public List<TeachAndResearchSection> getJoinedSectionList(Long userId) {
         List<SectionUser> sectionUsers = baseMapper.selectList(Wrappers.<SectionUser>lambdaQuery()
                 .eq(SectionUser::getUserId, userId));
-        return teachAndResearchSectionMapper.selectBatchIds(
-                sectionUsers.stream().map(SectionUser::getSectionId).toList());
+        List<Long> ids = sectionUsers.stream().map(SectionUser::getSectionId).collect(Collectors.toList());
+        if (ObjectUtils.isEmpty(ids)) {
+            return new ArrayList<>();
+        }
+        return teachAndResearchSectionMapper.selectBatchIds(ids);
     }
 
 }
